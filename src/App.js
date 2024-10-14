@@ -8,6 +8,9 @@ import Home from './components/Home';
 import Register from './components/Register';
 import Footer from './components/Footer';
 import RegCard from './components/RegCard';
+import NewTrans from './components/NewTrans';
+import Summary from './components/Summary';
+import AboutUs from './components/AboutUs';
 
 import { Alert } from 'react-bootstrap'; // Import Alert from react-bootstrap
 
@@ -46,9 +49,11 @@ function App() {
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/register" element={<Register />} />
 
-            <Route path="/aboutus" element={<div>About Us Content</div>} />
+            <Route path="/aboutus" element={<AboutUs/>} />
             <Route path="/methodology" element={<div>Our AI Methodology Content</div>} />
             <Route path="/regcard" element={<RegCard />} />
+            <Route path="/newtrans" element={<NewTrans />} />
+            <Route path="/summary" element={<Summary />} />
           </Routes>
         </main>
 
