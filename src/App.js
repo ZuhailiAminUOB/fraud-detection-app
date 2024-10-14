@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Register from './components/Register';
 import Footer from './components/Footer';
+import RegCard from './components/RegCard';
 
 import { Alert } from 'react-bootstrap'; // Import Alert from react-bootstrap
 
@@ -47,6 +48,7 @@ function App() {
 
             <Route path="/aboutus" element={<div>About Us Content</div>} />
             <Route path="/methodology" element={<div>Our AI Methodology Content</div>} />
+            <Route path="/regcard" element={<RegCard />} />
           </Routes>
         </main>
 
