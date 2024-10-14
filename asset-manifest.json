@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fraud-detection-app/static/css/main.dfd430ab.css",
+    "main.js": "/fraud-detection-app/static/js/main.a7b910dc.js",
+    "static/js/453.ed3810f9.chunk.js": "/fraud-detection-app/static/js/453.ed3810f9.chunk.js",
+    "static/media/test.png": "/fraud-detection-app/static/media/test.b24bcbda0cd965a98d99.png",
+    "static/media/zuhaili.png": "/fraud-detection-app/static/media/zuhaili.b2be290c4c3421eeaf5c.png",
+    "static/media/kl.png": "/fraud-detection-app/static/media/kl.c890fcc59f8e6c6f4ff8.png",
+    "static/media/sihui.png": "/fraud-detection-app/static/media/sihui.179b842c297660ddda5d.png",
+    "static/media/shin.png": "/fraud-detection-app/static/media/shin.60e2dc5336bc16c649f8.png",
+    "static/media/pravina.png": "/fraud-detection-app/static/media/pravina.fad48984ab9acf7ae06d.png",
+    "static/media/uob_logo_bluebg.png": "/fraud-detection-app/static/media/uob_logo_bluebg.64355899196b371c3688.png",
+    "index.html": "/fraud-detection-app/index.html",
+    "main.dfd430ab.css.map": "/fraud-detection-app/static/css/main.dfd430ab.css.map",
+    "main.a7b910dc.js.map": "/fraud-detection-app/static/js/main.a7b910dc.js.map",
+    "453.ed3810f9.chunk.js.map": "/fraud-detection-app/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfd430ab.css",
+    "static/js/main.a7b910dc.js"
+  ]
+}
