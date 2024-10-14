@@ -1,14 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import zuhaili from '../images/zuhaili.png';
+import sihui from '../images/sihui.png';
+import shin from '../images/shin.png';
+import pravina from '../images/pravina.png';
+import kl from '../images/kl.png'
 
 function AboutUs() {
   // Team member data
   const teamMembers = [
-    { name: 'Zuhaili', photo: 'https://via.placeholder.com/100', role: 'Developer' },
-    { name: 'Peh Shin', photo: 'https://via.placeholder.com/100', role: 'Developer' },
-    { name: 'Si Hui', photo: 'https://via.placeholder.com/100', role: 'Developer' },
-    { name: 'Keng Liang', photo: 'https://via.placeholder.com/100', role: 'Developer' },
-    { name: 'Pravina', photo: 'https://via.placeholder.com/100', role: 'Developer' },
+    { name: 'Zuhaili', photo: zuhaili, role: 'Developer' },
+    { name: 'Peh Shin', photo: shin, role: 'Developer' },
+    { name: 'Si Hui', photo: sihui, role: 'Developer' },
+    { name: 'Keng Liang', photo: kl, role: 'Developer' },
+    { name: 'Pravina', photo: pravina, role: 'Developer' },
   ];
 
   return (
@@ -16,7 +21,7 @@ function AboutUs() {
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#000000', borderWidth: '2px', borderStyle: 'solid' }}>
         <h2 className="text-center">About Us</h2>
         <p className="text-center">
-        We are a group of five passionate individuals: Zuhaili, Peh Shin, Si Hui, Keng Liang, and Pravina, who are part of the UOB Technology Development Programme 2024. Our mission is to create an AI Fraud Detection Web App as part of our TDP Capstone project.
+        We are a group of five passionate individuals: Zuhaili, Peh Shin, Si Hui, Kheng Liang, and Pravina, who are part of the UOB Technology Development Programme 2024. Our mission is to create an AI Fraud Detection Web App as part of our TDP Capstone project.
         </p>
       </div>
 
@@ -39,7 +44,7 @@ function AboutUs() {
                 <img
                   src={member.photo}
                   alt={member.name}
-                  className="rounded-circle mb-2 border border-primary border-3"
+                  className="rounded-circle mb-2 border border-dark border-3"
                   style={{ width: '100px', height: '100px' }}
                 />
                 <h5>{member.name}</h5>
