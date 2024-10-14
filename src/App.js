@@ -15,6 +15,12 @@ import Home from './components/Home'
 function App() {
   const [transactionData, setTransactionData] = useState(null);
   const [fraudResult, setFraudResult] = useState(null);
+  
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const toggleLogin = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
 
   const handleFormSubmit = (data) => {
     // Simulate an AI model checking for fraud
@@ -27,21 +33,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        {/* Pass isLoggedIn and toggleLogin to Navbar */}
+        <Navbar isLoggedIn={isLoggedIn} toggleLogin={toggleLogin} />
+
         <main>
           <Routes>
-            {/* <Route path="/register" element={<Register onSubmit={handleFormSubmit} />} />
-            <Route path ="/login" element={<Login onSubmit={handleFormSubmit} />} />
-            <Route path="/transaction" element={
-              <>
-                <FraudParagraph/>
-                <TransactionForm onSubmit={handleFormSubmit} />
-                <Dashboard transactionData={transactionData} fraudResult={fraudResult} />
-              </>
-            } /> */}
-            <Route path="/home" element={<Home/>}/>
+            {/* Pass isLoggedIn to Home */}
+            <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
             <Route path="/" element={<Navigate to="/home" />} />
-            {/* <Route path="/flaskform" element={<FlaskForm onSubmit={handleFormSubmit}/>} /> */}
           </Routes>
         </main>
       </div>
