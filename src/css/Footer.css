@@ -1,0 +1,43 @@
+.footer {
+    background-color: #133274; /* Match your navbar color */
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .footer-text {
+    margin: 0;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 15px; /* Space between links */
+  }
+  
+  .footer-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Add this to your main CSS to ensure no content is hidden by the footer */
+  body {
+    padding-bottom: 50px; /* Adjust this based on the footer height */
+  }
+  

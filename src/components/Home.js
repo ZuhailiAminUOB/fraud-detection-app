@@ -38,12 +38,12 @@ function Home({ isLoggedIn }) {
               <div className="col-md-12 mb-4">
                 <div className="card border border-dark">
                   <div className="card-body">
-                    <h5 className="card-title" style={{ fontSize: '1.5rem' }}>Submit A New Transaction</h5>
+                    <h5 className="card-title" style={{ fontSize: '1.5rem' }}>Add A New Transaction</h5>
                     <p className="card-text" style={{ fontSize: '1.2rem' }}>
                       Fill in a form to the best of your knowledge to detect whether that 
                       particular transaction is potentially fraudulent. Your input is crucial for analysis.
                     </p>
-                    <a href="/newtrans" className="btn btn-primary">Go to Submit</a>
+                    <a href="/newtrans" className="btn btn-primary">Go to Add</a>
                   </div>
                 </div>
               </div>

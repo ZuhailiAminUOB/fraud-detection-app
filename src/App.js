@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Register from './components/Register';
+import Footer from './components/Footer';
+
 import { Alert } from 'react-bootstrap'; // Import Alert from react-bootstrap
 
 function App() {
@@ -42,8 +44,13 @@ function App() {
             <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/register" element={<Register />} />
+
+            <Route path="/aboutus" element={<div>About Us Content</div>} />
+            <Route path="/methodology" element={<div>Our AI Methodology Content</div>} />
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </Router>
   );
