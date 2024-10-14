@@ -8,7 +8,21 @@ const RandomForestDescription = () => {
       <h2 className="text-center mb-4">Random Forest Classification</h2>
       <div className="row justify-content-center">
         <div className="col-lg-8 col-md-10">
-          <div className="card shadow-lg">
+          <div
+            className="card shadow-lg"
+            style={{
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              cursor: 'default', // Default cursor
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)'; // Scale up on hover
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 123, 255, 0.5)'; // Darker shadow on hover
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)'; // Scale back down
+              e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; // Original shadow
+            }}
+          >
             <div className="card-body">
               <div className="d-flex align-items-center mb-3">
                 <FaTree size={40} className="text-success me-3" />

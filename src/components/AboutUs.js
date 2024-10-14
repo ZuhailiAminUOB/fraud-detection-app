@@ -21,7 +21,7 @@ function AboutUs() {
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#000000', borderWidth: '2px', borderStyle: 'solid' }}>
         <h2 className="text-center">About Us</h2>
         <p className="text-center">
-        We are a group of five passionate individuals: Zuhaili, Peh Shin, Si Hui, Kheng Liang, and Pravina, who are part of the UOB Technology Development Programme 2024. Our mission is to create an AI Fraud Detection Web App as part of our TDP Capstone project.
+          We are a group of five passionate individuals: Zuhaili, Peh Shin, Si Hui, Keng Liang, and Pravina, who are part of the UOB Technology Development Programme 2024. Our mission is to create an AI Fraud Detection Web App as part of our TDP Capstone project.
         </p>
       </div>
 
@@ -45,7 +45,17 @@ function AboutUs() {
                   src={member.photo}
                   alt={member.name}
                   className="rounded-circle mb-2 border border-dark border-3"
-                  style={{ width: '100px', height: '100px' }}
+                  style={{ 
+                    width: '100px', 
+                    height: '100px',
+                    transition: 'transform 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge on hover
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)'; // Reset scale
+                  }}
                 />
                 <h5>{member.name}</h5>
                 <p>{member.role}</p>
