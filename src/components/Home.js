@@ -29,7 +29,7 @@ function Home({ isLoggedIn }) {
                       Register a new card here to detect fraud on any of your transactions. 
                       Ensure you provide accurate information for better fraud detection.
                     </p>
-                    <a href="/regcard" className="btn btn-primary">Go to Register</a>
+                    <a href="/regcard" className="btn btn-primary">Register New Card</a>
                   </div>
                 </div>
               </div>
@@ -43,7 +43,7 @@ function Home({ isLoggedIn }) {
                       Fill in a form to the best of your knowledge to detect whether that 
                       particular transaction is potentially fraudulent. Your input is crucial for analysis.
                     </p>
-                    <a href="/newtrans" className="btn btn-primary">Go to Add</a>
+                    <a href="/newtrans" className="btn btn-primary">Add New Transaction</a>
                   </div>
                 </div>
               </div>
