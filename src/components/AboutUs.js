@@ -12,7 +12,7 @@ function AboutUs() {
     { name: 'Zuhaili', photo: zuhaili, role: 'Developer' },
     { name: 'Peh Shin', photo: shin, role: 'Developer' },
     { name: 'Si Hui', photo: sihui, role: 'Developer' },
-    { name: 'Keng Liang', photo: kl, role: 'Developer' },
+    { name: 'Kheng Liang', photo: kl, role: 'Developer' },
     { name: 'Pravina', photo: pravina, role: 'Developer' },
   ];
 
@@ -21,7 +21,7 @@ function AboutUs() {
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#000000', borderWidth: '2px', borderStyle: 'solid' }}>
         <h2 className="text-center">About Us</h2>
         <p className="text-center">
-          We are a group of five passionate individuals: Zuhaili, Peh Shin, Si Hui, Keng Liang, and Pravina, who are part of the UOB Technology Development Programme 2024. Our mission is to create an AI Fraud Detection Web App as part of our TDP Capstone project.
+          We are a group of five passionate individuals: <b> Zuhaili, Peh Shin, Si Hui, Kheng Liang, and Pravina</b>, who are part of the UOB Technology Development Programme 2024. Our mission is to create an AI Fraud Detection Web App as part of our TDP Capstone project.
         </p>
       </div>
 
