@@ -1,0 +1,1 @@
+Install `npm i bootstrap-icons` to get the icon if it doesn't work

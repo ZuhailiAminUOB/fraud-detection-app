@@ -12,6 +12,7 @@ import NewTrans from './components/NewTrans';
 import Summary from './components/Summary';
 import AboutUs from './components/AboutUs';
 import Methodology from './components/Methodology';
+import Research from './components/Research'
 
 import { Alert } from 'react-bootstrap'; // Import Alert from react-bootstrap
 
@@ -52,6 +53,7 @@ function App() {
 
             <Route path="/aboutus" element={<AboutUs/>} />
             <Route path="/methodology" element={<Methodology/>} />
+            <Route path="/research" element={<Research />} />
             <Route path="/regcard" element={<RegCard />} />
             <Route path="/newtrans" element={<NewTrans />} />
             <Route path="/summary" element={<Summary />} />
