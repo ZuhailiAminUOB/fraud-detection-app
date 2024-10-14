@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaNodeJs, FaReact, FaJs, FaHtml5, FaCss3Alt, FaPython } from 'react-icons/fa';
+import { FaNodeJs, FaReact, FaJs, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { SiFlask } from 'react-icons/si';
 
 const TechStack = () => {
