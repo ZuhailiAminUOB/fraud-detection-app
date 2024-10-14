@@ -4,43 +4,44 @@ import './App.css'; // Make sure to create this file for styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from './components/Navbar';
-// import TransactionForm from './components/TransactionForm';
-// import Dashboard from './components/Dashboard';
-// import FraudParagraph from './components/FraudParagraph';
-// import Register from './components/Register';
-// import FlaskForm from './components/FlaskForm';
-// import Login from './components/Login';
-import Home from './components/Home'
+import Home from './components/Home';
+import Register from './components/Register';
+import { Alert } from 'react-bootstrap'; // Import Alert from react-bootstrap
 
 function App() {
-  const [transactionData, setTransactionData] = useState(null);
-  const [fraudResult, setFraudResult] = useState(null);
-  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertType, setAlertType] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
 
   const toggleLogin = () => {
     setIsLoggedIn(!isLoggedIn);
-  };
-
-  const handleFormSubmit = (data) => {
-    // Simulate an AI model checking for fraud
-    console.log('Transaction data submitted:', data);
-    const isFraud = Math.random() > 0.5; // Randomly determine if the transaction is fraudulent
-    setTransactionData(data);
-    setFraudResult(isFraud ? 'Fraudulent' : 'Legitimate');
+    const message = isLoggedIn ? 'User Logged Out' : 'User Logged In';
+    setAlertMessage(message);
+    setAlertType(isLoggedIn ? 'danger' : 'success');
+    setShowAlert(true);
+    
+    // Automatically hide the alert after 3 seconds
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
     <Router>
       <div className="App">
-        {/* Pass isLoggedIn and toggleLogin to Navbar */}
         <Navbar isLoggedIn={isLoggedIn} toggleLogin={toggleLogin} />
+
+        {/* Alert section */}
+        {showAlert && (
+          <Alert variant={alertType} className="m-3" onClose={() => setShowAlert(false)} dismissible>
+            {alertMessage}
+          </Alert>
+        )}
 
         <main>
           <Routes>
-            {/* Pass isLoggedIn to Home */}
             <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
             <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
       </div>
