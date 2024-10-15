@@ -2,7 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons
 import article1 from '../images/article1.png';
-
+import article2 from '../images/article2.png';
+import article3 from '../images/article3.png';
+import article4 from '../images/article4.png';
 
 function Research() {
   return (
@@ -118,28 +120,61 @@ function Research() {
               <th scope="col">#</th>
               <th scope="col">Articles</th>
               <th scope="col">Types of fraud</th>
-              <th scope="col">Description</th>
+              <th scope="col">Summary of articles</th>
             </tr>
           </thead>
           
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>
-                <img src={article1} alt="article 1" className="img-fluid mb-2" style={{ width: '100%', height: 'auto' }} />
+              <td style={{ width: '40%' }}>
+                <img src={article1} alt="article 1" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
               </td>
               <td>Identification of accounts with significant cash holdings</td>
               <td>
-                Over 40 UOB bank accounts holding more than $210,000 were seized or blocked in a police investigation into individuals, aged 24 to 65, suspected of selling their banking credentials and ATM cards to scammers for commissions or fake investment profits. UOB identified and blocked 74 more accounts linked to money laundering, withholding an additional $195,000. Using data analytics and network detection, suspicious transactions and potential money mules were identified. The public is advised to download the ScamShield app and use two-factor authentication for added security.
+                Over 40 UOB bank accounts holding more than $210,000 were seized or blocked in a police investigation into individuals, aged 24 to 65, suspected of selling their banking credentials and ATM cards to scammers for commissions or fake investment profits. UOB identified and blocked 74 more accounts linked to money laundering, withholding an additional $195,000. Using <b>data analytics</b> and <b>network detection</b>, suspicious transactions and potential money mules were identified. The public is advised to download the ScamShield app and use two-factor authentication for added security.
               </td>
             </tr>
+
             <tr>
               <th scope="row">2</th>
               <td>
-                <img src={article1} alt="article 2" className="img-fluid mb-2" style={{ width: '100%', height: 'auto' }} />
+                <img src={article2} alt="article 2" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
               </td>
-              <td>{/* Replace with your second finding description */}</td>
+              <td>Large transaction from potential scammed victims
+              </td>
+              <td>
+                A 75-year-old woman was scammed out of over S$213,000 in investments and was on the verge of losing an additional $500,000 when a Standard Chartered relationship manager intervened. The bank officer noticed her unusual banking behavior and flagged the outgoing transfers to various accounts, preventing further financial loss.
+              </td>
             </tr>
+
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <img src={article3} alt="article 3" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
+              </td>
+              <td>Large international transaction (potential fraud alert)
+              </td>
+              <td>
+                
+Over S$370,000 was recovered after Singapore and Hong Kong police, along with two banks, foiled a scam targeting a 70-year-old man. The victim had shared his bank credentials with a scammer, believing his computer was hacked. DBS detected suspicious transactions totaling S$180,000 sent to a Hong Kong account and immediately blocked further transfers, notifying Singapore's Anti-Scam Centre (ASC). The ASC contacted Hong Kong's Anti-Deception Coordination Centre (ADDC) and traced an additional S$240,000 missing from the victim's UOB account.
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <img src={article4} alt="article 4" className="img-fluid mb-2" style={{ width: '500px', height: 'auto' }} />
+              </td>
+              <td>Utilised corporate bank accounts for fraudulent activities
+              </td>
+              <td>
+                
+Three individuals were arrested for their suspected involvement in scam-related activities after a joint operation by police and DBS Bank. Over $1.28 million in bank accounts was seized. The trio allegedly gave their Singpass credentials to scammers for up to $2,000 per account, which were used to open fake businesses and bank accounts to facilitate scam-related transactions. Most victims had unknowingly handed over their Singpass details or clicked phishing links, often in response to fake job or loan offers, including ads on Telegram.
+              </td>
+            </tr>
+
+            
             {/* Add more table rows for additional findings */}
           </tbody>
         </table>
@@ -148,19 +183,27 @@ function Research() {
       {/* ... your existing content after the table ... */}
 
 
+      <h4>Hence...</h4>
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>4. Train/Test Split</h4>
-        <p>
-          We split the dataset into training and testing subsets to evaluate the model's performance accurately. 
-          This separation allows us to train the model on one portion of the data and validate it on a separate set to avoid overfitting.
+        <h4>Problem Statement</h4>
+        <p style={{textAlign: 'justify'}}>
+          Traditional fraud detection systems struggle to handle the growing complexity of fraud, especially when it varies across regions. Many systems can't effectively analyze or adapt to local transaction patterns, causing delays in detecting fraud. This puts banks at higher risk of undetected fraud, resulting in financial losses and reduced customer trust.
+          <br></br><br></br>
+          A more adaptive, region-specific solution is needed to respond to local threats and evolving fraud tactics.
+
         </p>
       </div>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>5. Data Visualization</h4>
+      <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid' }}>
+            <div style={{ fontSize: '40px', color: '#FFC000' }}>
+              <i class="bi bi-key"></i>
+            </div>
+        <h4>Key Features of Our System</h4>
         <p>
-          To understand the features affecting fraud detection better, we visualized fraud and non-fraud cases against various features. 
-          Below is a dummy visualization:
+          Feature 1:
+          Distance from Home:
+Measures the distance beween the customer’s home and the location of the transaction
+
         </p>
         <img src="https://via.placeholder.com/800x400" alt="Data Visualization" className="img-fluid mb-2" />
       </div>
