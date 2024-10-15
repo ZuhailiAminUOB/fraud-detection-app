@@ -5,13 +5,17 @@ import article1 from '../images/article1.png';
 import article2 from '../images/article2.png';
 import article3 from '../images/article3.png';
 import article4 from '../images/article4.png';
+import research from '../images/researchmethod.jpg';
 
 function Research() {
   return (
     <div className="container my-4">
       <h2 className="mb-4">Our Research Analysis</h2>
+
+      <img src={research} alt="Research image from google" className="img-fluid mb-5" />
+
       
-      <div style={{ backgroundColor: '#DDE9F7', padding: '10px'}}>
+      <div style={{ backgroundColor: '#DDE9F7', padding: '15px'}}>
         <p style={{textAlign: 'justify'}}>
           <h5><b>Why is AI Fraud Detection System important?</b></h5>
           
@@ -19,52 +23,56 @@ function Research() {
         </p>
       </div>
 
-      <br></br>
-
       <div className="container my-4">
 
-      {/* Problem & Context Section */}
-      <div className="row mb-4">
-        {/* Issue */}
-        <div className="col-md-4">
-          <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid' }}>
-            <div style={{ fontSize: '40px', color: '#FF0000' }}>
-              <i className="bi bi-exclamation-circle"></i>
-            </div>
-            <h4>Issue</h4>
-            <p>
-              Traditional fraud detection methods are increasingly ineffective against growing fraud tactics. Current systems can't always spot complex fraud patterns, leading to higher financial risks.
-            </p>
+  {/* Problem & Context Section */}
+  <div className="row mb-4">
+    {/* Issue */}
+    <div className="col-md-4">
+      <div className="card">
+        <div className="card-body">
+          <div style={{ fontSize: '40px', color: '#FF0000' }}>
+            <i className="bi bi-exclamation-circle"></i>
           </div>
-        </div>
-
-        {/* Why Care */}
-        <div className="col-md-4">
-          <div className="border rounded p-3" style={{ borderColor: '#28A745', borderWidth: '2px', borderStyle: 'solid' }}>
-            <div style={{ fontSize: '40px', color: '#28A745' }}>
-              <i className="bi bi-heart-fill"></i>
-            </div>
-            <h4>Why Care</h4>
-            <p>
-              Fraud prevention is crucial to safeguard the financial security of individuals and organizations. By improving detection accuracy, we can reduce losses and maintain trust in the financial system.
-            </p>
-          </div>
-        </div>
-
-        {/* How Your Research Helps */}
-        <div className="col-md-4">
-          <div className="border rounded p-3" style={{ borderColor: '#17A2B8', borderWidth: '2px', borderStyle: 'solid' }}>
-            <div style={{ fontSize: '40px', color: '#17A2B8' }}>
-              <i className="bi bi-lightbulb-fill"></i>
-            </div>
-            <h4>How Our Research Helps</h4>
-            <p>
-              Our research leverages AI to provide a more accurate, scalable, and real-time solution for detecting fraud, helping businesses and financial institutions stay ahead of evolving threats and prevent financial losses.
-            </p>
-          </div>
+          <h4>Issue</h4>
+          <p>
+            Traditional fraud detection methods are increasingly ineffective against growing fraud tactics. Current systems can't always spot complex fraud patterns, leading to higher financial risks.
+          </p>
         </div>
       </div>
     </div>
+
+    {/* Why Care */}
+    <div className="col-md-4">
+      <div className="card">
+        <div className="card-body">
+          <div style={{ fontSize: '40px', color: '#28A745' }}>
+            <i className="bi bi-heart-fill"></i>
+          </div>
+          <h4>Why Care</h4>
+          <p>
+            Fraud prevention is crucial to safeguard the financial security of individuals and organizations. By improving detection accuracy, we can reduce losses and maintain trust in the financial system.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* How Your Research Helps */}
+    <div className="col-md-4">
+      <div className="card">
+        <div className="card-body">
+          <div style={{ fontSize: '40px', color: '#17A2B8' }}>
+            <i className="bi bi-lightbulb-fill"></i>
+          </div>
+          <h4>How Our Research Helps</h4>
+          <p>
+            Our research leverages AI to provide a more accurate, scalable, and real-time solution for detecting fraud, helping businesses and financial institutions stay ahead of evolving threats and prevent financial losses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid' }}>
         <h3>About the Project</h3>
@@ -88,19 +96,19 @@ function Research() {
       </div>
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h3>Project Purpose </h3>
-        <p style={{textAlign: 'justify'}}>
+        <h3>Project Purpose</h3>
+        <p style={{textAlign: 'left', padding: '10px'}}>
             {/* Icon here */}
         <div>
-            <i className="bi-check" style={{ fontSize: '40px' }}></i>
+            <i className="bi-check" style={{ fontSize: '50px' }}></i>
         </div> 
         {/* Text content */}
-            <h6>Our Aim</h6>
+            <h4>Our Aim</h4>
           To design and implement a real-time fraud detection system using advanced AI to identify and prevent fraudulent banking activities.
            <br></br>
            <br></br>
            <i className="bi bi-binoculars" style={{ fontSize: '35px' }}></i>
-            <h6>The Goal</h6>
+            <h4>The Goal</h4>
                 <ul>
           <li> To enhance detection through analysing transaction patterns across regions and adapting to local behaviors and threats. </li>
           <li>The system will continuously learn and update, offering a scalable solution to protect transactions, reduce losses, and improve banking security.</li>
@@ -194,19 +202,120 @@ Three individuals were arrested for their suspected involvement in scam-related 
         </p>
       </div>
 
-      <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid' }}>
-            <div style={{ fontSize: '40px', color: '#FFC000' }}>
+      <div style={{ borderColor: '#D1E0F3', borderWidth: '2px', borderRadius: '50px', borderStyle: 'solid', backgroundColor: '#E7EFF9' }}>
+            <div style={{ fontSize: '50px', color: '#DAA600' }}>
               <i class="bi bi-key"></i>
             </div>
-        <h4>Key Features of Our System</h4>
-        <p>
-          Feature 1:
-          Distance from Home:
-Measures the distance beween the customer’s home and the location of the transaction
+        <h4><strong>Key Features of Our System</strong></h4>
+        
+        <div className="container my-3">
+              <div className="row mb-4">
+                {/* Features */}
+                <div className="col-md-3">
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                    
+                    <h4>Feature 1</h4>
+                    <p style={{textAlign: 'justify'}}>
+                      <b>Distance from Home:</b>
+                      <br></br>
+                      Measures the distance beween the customer’s home and the location of the transaction
+                    </p>
+                  </div>
+                </div>
 
-        </p>
-        <img src="https://via.placeholder.com/800x400" alt="Data Visualization" className="img-fluid mb-2" />
+                <div className="col-md-3">
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                    
+                    <h4>Feature 2</h4>
+                    <p style={{textAlign: 'justify'}}>
+                      <b>Distance from Last Transaction:</b>
+                      <br></br>
+                      Calculates the distance between current transaction and the previous one
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-md-3">
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                    
+                    <h4>Feature 3</h4>
+                    <p style={{textAlign: 'justify'}}>
+                      <b>Ratio to Median Purchase Price:</b>
+                      <br></br>
+                      Compares the transaction amount to the median purchase price of the customer’s past transactions
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-md-3">
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                    
+                    <h4>Feature 4</h4>
+                    <p style={{textAlign: 'justify'}}>
+                      <b>Repeat Retailer:</b>
+                      <br></br>
+                      Indicates whether the transaction occurred with a retailer previously used by the customer
+                      <br></br>
+                      (0 = No, 1 = Yes).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+          <div className="row mb-4 justify-content-center"> 
+
+                <div className="col-md-3">
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                       
+                    <h4>Feature 5</h4>
+                    <p style={{textAlign: 'justify'}}>
+                      <b>Chip Utilization:</b>
+                      <br></br>
+                      Identifies if the transaction was completed using a chip-enabled credit card
+                      (0 = No, 1 = Yes).
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-md-3">
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                    
+                    <h4>Feature 6</h4>
+                    <p style={{textAlign: 'justify'}}>
+                      <b>PIN Number Usage:</b>
+                      <br></br>
+                      Determines whether a PIN was used to complete the transaction
+                      <br></br>
+                      (0 = No, 1 = Yes).
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-md-3">
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                    
+                    <h4>Feature 7</h4>
+                    <p style={{textAlign: 'justify'}}>
+                      <b>Online Order:</b>
+                      <br></br>
+                      Specifies if the transaction was an online purchase
+                      <br></br>
+                      (0 = No, 1 = Yes).
+                    </p>
+
+                    
+                  </div>
+                </div>
+              </div>
+           </div>
+           <br></br>
+                    <p>
+                      The system will then analyze these factors to determine if the transaction is categorized as <b>Fraud or No Fraud.</b>
+                    </p>
+          <br></br>
       </div>
+
+<br></br>
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>6. Data Scaling</h4>
