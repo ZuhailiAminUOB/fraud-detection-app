@@ -1,14 +1,71 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons
+import article1 from '../images/article1.png';
+
 
 function Research() {
   return (
     <div className="container my-4">
       <h2 className="mb-4">Our Research Analysis</h2>
+      
+      <div style={{ backgroundColor: '#DDE9F7', padding: '10px'}}>
+        <p style={{textAlign: 'justify'}}>
+          <h5><b>Why is AI Fraud Detection System important?</b></h5>
+          
+          Traditional fraud detection methods are increasingly ineffective against the growing sophistication of fraudulent tactics. AI can analyze vast amounts of data in real-time, spot complex patterns, and quickly identify unusual activities that may indicate fraud. This helps prevent financial losses, enhances security, and provides a scalable solution for banks and businesses to protect customers and maintain trust in the financial system.
+        </p>
+      </div>
+
+      <br></br>
+
+      <div className="container my-4">
+
+      {/* Problem & Context Section */}
+      <div className="row mb-4">
+        {/* Issue */}
+        <div className="col-md-4">
+          <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid' }}>
+            <div style={{ fontSize: '40px', color: '#FF0000' }}>
+              <i className="bi bi-exclamation-circle"></i>
+            </div>
+            <h4>Issue</h4>
+            <p>
+              Traditional fraud detection methods are increasingly ineffective against growing fraud tactics. Current systems can't always spot complex fraud patterns, leading to higher financial risks.
+            </p>
+          </div>
+        </div>
+
+        {/* Why Care */}
+        <div className="col-md-4">
+          <div className="border rounded p-3" style={{ borderColor: '#28A745', borderWidth: '2px', borderStyle: 'solid' }}>
+            <div style={{ fontSize: '40px', color: '#28A745' }}>
+              <i className="bi bi-heart-fill"></i>
+            </div>
+            <h4>Why Care</h4>
+            <p>
+              Fraud prevention is crucial to safeguard the financial security of individuals and organizations. By improving detection accuracy, we can reduce losses and maintain trust in the financial system.
+            </p>
+          </div>
+        </div>
+
+        {/* How Your Research Helps */}
+        <div className="col-md-4">
+          <div className="border rounded p-3" style={{ borderColor: '#17A2B8', borderWidth: '2px', borderStyle: 'solid' }}>
+            <div style={{ fontSize: '40px', color: '#17A2B8' }}>
+              <i className="bi bi-lightbulb-fill"></i>
+            </div>
+            <h4>How Our Research Helps</h4>
+            <p>
+              Our research leverages AI to provide a more accurate, scalable, and real-time solution for detecting fraud, helping businesses and financial institutions stay ahead of evolving threats and prevent financial losses.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h3>- About the Project -</h3>
+        <h3>About the Project</h3>
         <p style={{textAlign: 'justify'}}>
           In this section, we will share the key findings from our research on improving fraud detection using Artificial Intelligence (AI). This project focuses on how AI can be used to better identify and prevent fraud in financial transactions.
           <br></br>
@@ -29,7 +86,7 @@ function Research() {
       </div>
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4> 1. Project Purpose </h4>
+        <h3>Project Purpose </h3>
         <p style={{textAlign: 'justify'}}>
             {/* Icon here */}
         <div>
@@ -50,15 +107,46 @@ function Research() {
         </p>
       </div>
 
+      {/* ... your existing content before the table ... */}
+      <br></br>
+      <h3>Research Findings</h3>
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>2. Problem Statement</h4>
 
-        <h6>Research Findings</h6>
-        <p>
-          To address the imbalance in the dataset, we performed sampling techniques to balance the number of fraudulent and legitimate cases. 
-          This step ensures that our model is trained on a more representative set of data, improving its performance in real-world scenarios.
-        </p>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Articles</th>
+              <th scope="col">Types of fraud</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <img src={article1} alt="article 1" className="img-fluid mb-2" style={{ width: '100%', height: 'auto' }} />
+              </td>
+              <td>Identification of accounts with significant cash holdings</td>
+              <td>
+                Over 40 UOB bank accounts holding more than $210,000 were seized or blocked in a police investigation into individuals, aged 24 to 65, suspected of selling their banking credentials and ATM cards to scammers for commissions or fake investment profits. UOB identified and blocked 74 more accounts linked to money laundering, withholding an additional $195,000. Using data analytics and network detection, suspicious transactions and potential money mules were identified. The public is advised to download the ScamShield app and use two-factor authentication for added security.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <img src={article1} alt="article 2" className="img-fluid mb-2" style={{ width: '100%', height: 'auto' }} />
+              </td>
+              <td>{/* Replace with your second finding description */}</td>
+            </tr>
+            {/* Add more table rows for additional findings */}
+          </tbody>
+        </table>
       </div>
+
+      {/* ... your existing content after the table ... */}
+
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>4. Train/Test Split</h4>

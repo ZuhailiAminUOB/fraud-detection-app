@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-links">
           <Link to="/aboutus">About Us</Link>
           <Link to="/methodology">Our AI Methodology</Link>
-          <Link to="/research">Research Analysis</Link>
+          <Link to="/research">Our Research Analysis</Link>
         </div>
       </div>
     </footer>
