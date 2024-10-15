@@ -191,7 +191,7 @@ Three individuals were arrested for their suspected involvement in scam-related 
       {/* ... your existing content after the table ... */}
 
 
-      <h4>Hence...</h4>
+      <h1>Hence...</h1>
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>Problem Statement</h4>
         <p style={{textAlign: 'justify'}}>
