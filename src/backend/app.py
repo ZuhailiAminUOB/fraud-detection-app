@@ -1,7 +1,5 @@
 from flask import Flask, request, jsonify, render_template, redirect, url_for
-from models.Customer import Customer
-from models.Location import Location
-
+from flask_cors import CORS
 import requests
 import folium
 import time
@@ -40,192 +38,50 @@ def haversine(lat1, lon1, lat2, lon2):
     return distance
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        model_path = 'models/RF.pkl'
-        if os.path.exists(model_path):
-            model = joblib.load(model_path)
-            print("Model loaded successfully.")
-            print("Model",  model)
-        else:
-            print(f"Model not found at {model_path}")
-        
-        # Process custmer data from database
+@app.route('/regcard', methods=['POST'])
+def register_card():
+    try:
         conn = sqlite3.connect('database.db')
         cur = conn.cursor()
-        try:
-            # Get data from form
-            distance_from_home = float(request.form.get('distance_from_home'))
-            distance_last_transaction = float(request.form.get('distance_last_transaction'))
-            ratio_median_purchase_price = float(request.form.get('ratio_median_purchase_price'))
-            repeat_retailer = int(request.form.get('repeat_retailer'))
-            used_chip = int(request.form.get('used_chip'))
-            used_pin = int(request.form.get('used_pin'))
-            online_order = int(request.form.get('online_order'))
-            # Processing
-            data = [distance_from_home, distance_last_transaction, ratio_median_purchase_price, repeat_retailer, used_chip, used_pin, online_order]
 
-            # Insert into database
-            cur.execute('''
-                INSERT INTO transactions (distance_from_home, distance_last_transaction, ratio_median_purchase_price, repeat_retailer, used_chip, used_pin, online_order) 
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-                ''', data)
-            conn.commit()
-            print("Data inserted successfully")
+        data = request.get_json()
+        name = data.get('name')
+        userAddress = data.get('homeState') 
+        annual_income = data.get('annualIncome')
 
-            scaler_minmax = [1063.723672, 11851,104565, 267.80292, 1, 1, 1, 1]
-            feature_names = ['distance_from_home', 'distance_from_last_transaction', 'ratio_to_median_purchase_price', 'repeat_retailer', 'used_chip', 'used_pin_number', 'online_order']
-            input_data = pd.DataFrame([data], columns=feature_names)
-            # Normalization
-            input_data_scaled = input_data.copy()
-            for i, feature in enumerate(feature_names):
-                if scaler_minmax[i] != 0:  # Avoid division by zero
-                    input_data_scaled[feature] = input_data[feature] / scaler_minmax[i]
-            # Prediction
-            prediction = model.predict(input_data_scaled)    
-            prediction = prediction.tolist()[0]
-            print("prediction: ",  prediction)
-            if prediction == 0.0:
-                result = 'Alright youre good'
-            else:
-                result = 'That looks like a fraud to me'
-            return render_template('index.html', prediction=result, database_result = 'Successful database entry')
-        
-        except Exception as e:
-            print("Error: ", e)
-            return render_template('index.html', prediction='Error processing data', database_result = 'Unsuccessfully database entry')
-    
-    return render_template('index.html')
+        # Nominatim API call to get latitude and longitude
+        BASE_URL = "https://nominatim.openstreetmap.org/search?format=json"
+        headers = {"User-Agent": "TestFraudDetection"}
 
-@app.route('/data')
-def data():
-    conn = sqlite3.connect("database.db")
-    # store all the rows
-    conn.row_factory = sqlite3.Row
+        response = requests.get(f"{BASE_URL}&q={userAddress}", headers=headers)
+        data = response.json()
+        latitude = data[0].get('lat')
+        longitude = data[0].get('lon')
 
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM transactions")
-    rows = cur.fetchall()
-    conn.close()
-    return render_template("data.html", rows = rows)
+        cust_loc_data = [userAddress, float(longitude), float(latitude)]
 
-@app.route('/clear_transactions', methods=['POST'])
-def clear_transactions():
-    conn = sqlite3.connect('database.db')
-    cur = conn.cursor()
-    
-    try:
-        cur.execute('DELETE FROM transactions')
+        # Insert location data
+        cur.execute('''INSERT INTO locations(name, longitude, latitude)
+                    VALUES(?, ?, ?)''', cust_loc_data)
         conn.commit()
-        print("All transaction records cleared")
+
+        # Get location ID for the customer record
+        cur.execute('SELECT id FROM locations WHERE name = ?', (userAddress,))
+        location_id = cur.fetchone()[0]
+
+        customer_data = [name, annual_income, location_id]
+
+        # Insert customer data
+        cur.execute('''INSERT INTO customers (name, annual_income, location_id)
+                    VALUES(?, ?, ?)''', customer_data)
+        conn.commit()
+
+        return jsonify({"message": "Customer registered successfully"}), 200
 
     except Exception as e:
-        print(f"An error occurred: {e}")
-    finally:
-        conn.close()
-    
-    return redirect(url_for('index'))
-
-@app.route('/register_card', methods=['GET', 'POST'])
-def register_card():
-    #get details from register_card.html
-    if request.method == 'POST':
-        conn = sqlite3.connect('database.db')
-        cur = conn.cursor()
-
-        try:
-            data = request.get_json()
-            name = data.get('name')
-            userAddress = data.get('userAddress')
-            annual_income = data.get('annual_income')
-
-            #User information, API call nominatim to get longitude and latitude
-            BASE_URL = "https://nominatim.openstreetmap.org/search?format=json"
-            headers = {"User-Agent": "TestFraudDetection"}
-
-            response = requests.get(f"{BASE_URL}&q={userAddress}", headers=headers)
-            data = response.json()
-            latitude = data[0].get('lat')
-            longitude = data[0].get('lon')
-            # user_location = float(latitude), float(longitude)
-            
-            cust_loc_data = [userAddress, float(longitude), float(latitude)]
-
-            #Insert user location data
-            cur.execute('''INSERT INTO locations(name, longitude, latitude)
-                        VALUES(?, ?, ?)
-                        ''', cust_loc_data)
-            conn.commit()
-            print("Customer location data successfully inserted")
-
-            #Get location ID to link to customer DB as FK.
-            cur.execute('''
-            SELECT id FROM locations WHERE name = ?''', (userAddress, ))
-            location_id = cur.fetchone()[0]
-            print(f"Customer location id: {location_id}")
-            
-            customer_data = [name, annual_income, location_id]
-
-            #Enter a customer record with location id as foreign key
-            cur.execute('''
-                INSERT INTO customers (name, annual_income, location_id) 
-                VALUES (?, ?, ?)
-                ''', customer_data)
-            conn.commit()
-            print("Data inserted successfully")
-
-        except Exception as e:
-            print("Error: ", e)
-            return jsonify({"error": str(e)})
-        
-        return render_template('register_card.html')
-    return render_template('register_card.html')
-
-            # m = folium.Map(location=user_location, zoom_start=15, width=800, height=400)
-            # folium.Marker(location=[latitude, longitude], popup=userAddress).add_to(m)
-
-            # time.sleep(1)
-
-            # seller location1
-        #     response2 = requests.get(f"{BASE_URL}&q={sellerLocation}", headers=headers)
-        #     data2 = response2.json()
-            
-        #     print(sellerLocation)
-
-        #     latitude2 = data2[0].get('lat')
-        #     longitude2 = data2[0].get('lon')
-        #     seller_location = float(latitude2), float(longitude2)
-        #     # print(seller_location)
-
-        #     #Distance between user and seller
-        #     distance_difference = haversine(float(latitude), float(longitude), float(latitude2), float(longitude2))
-        #     print("distance difference: ", distance_difference)
-
-        #     folium.Marker(location=[latitude2, longitude2], popup=sellerLocation).add_to(m)
-        #     folium.PolyLine((user_location, seller_location), popup=f"{distance_difference:.2f}km").add_to(m)
-
-        #     # Check if chip or pin
-        #     if chipOrPin == "Chip":
-        #         used_chip = 1
-        #         used_pin = 0
-        #     else:
-        #         used_chip = 0
-        #         used_pin = 1
-            
-
-            # map_filename = f"static/{name}_map.html"
-            # m.save(map_filename)
-            # conn.close()
-            # # map_html = m._repr_html_()
-            # return jsonify({"map_url": map_filename})
-
-        # except Exception as e:
-        #     print("Error: ", e)
-        #     return jsonify({"error": str(e)})
-
-    # return render_template('register_card.html')
+        return jsonify({"error": str(e)}), 400
 
 @app.route('/add_transaction', methods=["GET", "POST"])
 def add_transaction():
@@ -355,13 +211,6 @@ def add_transaction():
 
                     # Calculate distance between current and previous transaction location
                     dist_from_last_transaction = haversine(prev_lat, prev_lon, curr_lat, curr_lon)
-
-                    # # Update the transaction log with the calculated distance
-                    # cur.execute('''
-                    #     UPDATE transactions
-                    #     SET dist_from_last_transaction = ?
-                    #     WHERE id = ?
-                    # ''', (dist_from_last_transaction, transaction_id))
                 
                 elif previous_transaction == None:
                     dist_from_last_transaction = 0
@@ -494,52 +343,13 @@ def add_transaction():
                             ''', (int(prediction), transaction_id))
                 conn.commit()
             conn.close()
-
-            #     input_data = [dist_from_home, dist_from_last_transaction, ratio_to_median_spendings, repeat_retailer, used_chip, used_pin, online_order]
-            #     print(input_data)
-            #     scaler_minmax = [1063.723672, 11851,104565, 267.80292, 1, 1, 1, 1]
-            #     feature_names = ['distance_from_home', 'distance_from_last_transaction', 'ratio_to_median_purchase_price', 'repeat_retailer', 'used_chip', 'used_pin_number', 'online_order']
-            #     input_records = pd.DataFrame([input_data], columns=feature_names)
-
-            #     #Normalization
-            #     input_records_scaled = input_records.copy()
-            #     for i, feature in enumerate(feature_names):
-            #         if scaler_minmax[i] != 0: # Avoid division by zero
-            #             input_records_scaled[feature] = input_records[feature]/scaler_minmax[i]
-
-            #     transaction_id_list.append(transaction_id)
-            # print("transaction_id_list: ", transaction_id_list)
-
-            # # Prediction
-            # prediction = model.predict(input_records_scaled)
-            # print("model predictions list: ", prediction.tolist())
-            # prediction = prediction.tolist()[0]
-            # print("prediction: ",  prediction)
-            # if prediction == 0.0:
-            #     result = 'Alright youre good'
-            # else:
-            #     result = 'That looks like a fraud to me'
-            # print(result)
-
-            # for n in transaction_id_list:
-            #     print("trans_id: ", n)
-            # #Insert prediction into transaction table
-            #     cur.execute('''UPDATE transactions
-            #                 SET prediction = ?
-            #                 WHERE id = ?
-            #                 ''', (int(prediction), n))
-            #     # return render_template('index.html', prediction=result, database_result = 'Successful database entry')
-            # conn.close()
-
-            return render_template("add_transaction.html")
+            print("Prediction successfully added to transactions")
+            return jsonify({"message": "Transaction added successfully"}), 200
 
         except Exception as e:
-                print("Error: ", e)
-                return jsonify({"error": str(e)})
-        
-
-    return render_template('add_transaction.html')
-
+            print("Error: ", e)
+            return jsonify({"error": str(e)}), 500
+    
 @app.route('/summary')
 def summary():
     # plotting table
@@ -568,57 +378,10 @@ def summary():
         ''')
         rows = cur.fetchall()
         conn.close()
-
-    #     cust_home_location = set()
-    #     transaction_locations = []
-    #     predictions = []
-    #     transaction_amounts = []
-    #     for row in rows:
-    #         cust_home_location.add(row['cust_home_location'])
-    #         transaction_locations.append(row['loc_name'])
-    #         if int(row['prediction']) == 1:
-    #             predictions.append('Flagged Fraudulent')
-    #         else:
-    #             predictions.append('Flagged Legitimate')
-    #         transaction_amounts.append(row['transaction_amount'])
-
-    #     cust_home_location = list(cust_home_location)[0]
-    #     print(transaction_locations)
-    #     BASE_URL = "https://nominatim.openstreetmap.org/search?format=json"
-    #     headers = {"User-Agent": "TestFraudDetection"}
-
-    #     response = requests.get(f"{BASE_URL}&q={cust_home_location}", headers=headers)
-    #     data = response.json()
-    #     latitude = data[0].get('lat')
-    #     longitude = data[0].get('lon')
-    #     home_loc = float(latitude), float(longitude)
-    #     print(home_loc)
-
-    #     m = folium.Map(location=home_loc, zoom_start=15, width=800, height=400)
-    #     folium.Marker(location=home_loc, popup=cust_home_location).add_to(m)
-    #     prev_loc = home_loc
-
-    #     for i, (loc, prediction, transaction_amounts) in enumerate(zip(transaction_locations, predictions, transaction_amounts), start=1):
-    #         response = requests.get(f"{BASE_URL}&q={loc}", headers=headers)
-    #         data = response.json()
-    #         latitude = data[0].get('lat')
-    #         longitude = data[0].get('lon')
-    #         transaction_loc = float(latitude), float(longitude)
-    #         folium.Marker(location=transaction_loc, popup=loc).add_to(m)
-    #         folium.PolyLine([prev_loc, transaction_loc], popup=f"Transaction {i}: {haversine(prev_loc[0], prev_loc[1], transaction_loc[0], transaction_loc[1]):.2f}km<br>${transaction_amounts:.2f}<br>{prediction}").add_to(m)
-    #         prev_loc = transaction_loc
-    #         time.sleep(1)
-
-    #     map_filename = f"static/map.html"
-    #     m.save(map_filename)
-    #     return render_template("summary.html", rows=rows, map_url=map_filename)
         return render_template("summary.html", rows=rows)
+    
     except Exception as e:
         return jsonify({"error": str(e)})
-    
-    # except Exception as e:
-    #     print("Error: ", e)
-    #     return jsonify({"error": str(e)})
 
 @app.route('/get_map')
 def get_map():
