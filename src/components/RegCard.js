@@ -18,8 +18,26 @@ function RegCard() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
-    console.log(transactions);
+    
+    fetch('http://localhost:5000/regcard', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(transactions[0]), // Sending only the first transaction for now
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.error) {
+        console.error('Error:', data.error);
+      } else {
+        console.log('Success:', data.message);
+        alert('Card registered successfully!');
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   };
 
   return (
@@ -59,6 +77,7 @@ function RegCard() {
                 <option value="Texas">Texas</option>
                 <option value="Florida">Florida</option>
                 <option value="Illinois">Illinois</option>
+                <option value="Ngee Ann Polytechnic">Ngee Ann Polytechnic</option>
               </select>
             </div>
             <div className="mb-3">
