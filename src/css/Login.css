@@ -1,0 +1,104 @@
+/* Centering the login form */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300vh; /* Increased height to 300vh */
+    width: 100%; /* Use 100% width to make it stretch across the container */
+    padding: 40px; /* Increased padding for more space inside the section */
+    max-width: 800px; /* Optional: Set a max width for larger screens */
+    margin: auto; /* Center the section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f8f9fa; /* Light background color */
+}
+
+
+.login-form {
+    background-color: #222; /* Dark background for the form */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Form Heading */
+h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+/* Label Text Color */
+label {
+    color: black; /* Change label color to black */
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Spacing below labels */
+    font-weight: bold; /* Make labels bold */
+}
+
+
+/* Input Field Styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid #444; /* Darker border for contrast */
+    border-radius: 4px;
+    background-color: #333;
+    color: black;
+    font-size: 16px;
+}
+
+/* Styling for the button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0066cc; /* Primary color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004999; /* Darker shade on hover */
+}
+
+/* Error Message Styling */
+.errmsg {
+    background-color: #ffdddd;
+    color: #900;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Link Styling */
+a {
+    color: #0066cc; /* Primary color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Small Link Text */
+.line {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.text-light {
+    color: black;
+}
