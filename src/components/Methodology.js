@@ -1,19 +1,21 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import DatasetSummary from './DatasetSummary';
 
 function Methodology() {
   return (
     <div className="container my-4">
-      <h2 className="mb-4">Our AI Methodology</h2>
+      <DatasetSummary />
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
+      {/* <h2 className="mb-4">Our AI Methodology</h2> */ }
+  {/* <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>1. Explanation of AI Methodology</h4>
         <p>
           We utilized the Random Forest algorithm, a powerful ensemble learning method that combines multiple decision trees to improve classification accuracy and control overfitting. 
           Each tree in the forest is built on a random subset of the training data, and when predicting outcomes, the Random Forest averages the predictions from all individual trees. 
           This approach allows for a more robust model that can handle complex relationships in the data while maintaining high accuracy.
         </p>
-      </div>
+      </div> */}
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>2. Dataset We Used</h4>
@@ -103,7 +105,7 @@ function Methodology() {
           Ultimately, we decided to utilize the Random Forest algorithm due to its impressive performance metrics, specifically high precision and recall in the confusion matrix, making it an ideal choice for fraud detection.
         </p>
       </div>
-    </div>
+    </div >
   );
 }
 

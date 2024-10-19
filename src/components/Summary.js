@@ -75,12 +75,13 @@ function Summary() {
         </tbody>
       </table>
 
-      <button className="btn btn-primary mb-3" onClick={loadMap}>
+      <div><button className="btn btn-primary mb-3" onClick={loadMap} >
         Load Map
-      </button>
+      </button></div>
 
-      <h3>Transaction Map</h3>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '40vh' }}>
+      <div><h3>Transaction Map</h3></div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '40vh', marginTop: '50px'}}>
         <div style={{ height: '410px', border: '2px solid #000', marginTop: '20px', width: '62%', justifyContent: 'center' }}>
           {loading ? ( // Conditionally render loading message
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>

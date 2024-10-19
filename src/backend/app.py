@@ -440,12 +440,16 @@ def get_map():
         transaction_locations = []
         predictions = []
         transaction_amounts = []
+        dist_from_home = []
+        dist_from_last_trans = []
 
         for row in rows:
             cust_home_location.add(row['cust_home_location'])
             transaction_locations.append(row['loc_name'])
             predictions.append('Flagged Fraudulent' if int(row['prediction']) == 1 else 'Flagged Legitimate')
             transaction_amounts.append(row['transaction_amount'])
+            dist_from_home.append(row['dist_from_home'])
+            dist_from_last_trans.append(row['dist_from_last_transaction'])
 
         cust_home_location = list(cust_home_location)[0]
         print(cust_home_location)
@@ -463,14 +467,19 @@ def get_map():
         prev_loc = home_loc
 
         #Plot the transactions location
-        for i, (loc, prediction, transaction_amount) in enumerate(zip(transaction_locations, predictions, transaction_amounts), start=1):
+        for i, (loc, prediction, transaction_amount, dist_home, dist_last_trans) in enumerate(zip(transaction_locations, predictions, transaction_amounts, dist_from_home, dist_from_last_trans), start=1):
             response = requests.get(f"{BASE_URL}&q={loc}", headers=headers)
             data = response.json()
             latitude = data[0].get('lat')
             longitude = data[0].get('lon')
             transaction_loc = float(latitude), float(longitude)
             folium.Marker(location=transaction_loc, popup=loc).add_to(m)
-            folium.PolyLine([prev_loc, transaction_loc], popup=f"Transaction {i}: {transaction_loc}").add_to(m)
+            folium.PolyLine([prev_loc, transaction_loc], 
+                            popup=f'''<strong>Transaction</strong> {i}
+                            <br><strong>Amount</strong>: ${transaction_amount:.2f}
+                            <br><strong>Distance from home</strong>: {dist_home:.2f} km
+                            <br><strong>Distance from last transaction</strong>: {dist_last_trans:.2f} km
+                            <br><strong>Prediction</strong>: {prediction}''').add_to(m)
             prev_loc = transaction_loc
             time.sleep(1)
 
