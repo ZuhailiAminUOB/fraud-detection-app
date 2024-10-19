@@ -22,7 +22,7 @@ const DatasetSummary = () => {
                 backgroundColor: 'rgba(255, 99, 132, 0.6)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1,
-                
+
             },
         ],
     };
@@ -50,7 +50,7 @@ const DatasetSummary = () => {
 
     // Text descriptions
     const originalDescription = 'The dataset is imbalanced.';
-    const processedDescription ='Undersampling is done to remove the skewness.';
+    const processedDescription = 'Undersampling is done to remove the skewness.';
     const originalDescription2 = '0.095% of the transactions are fraudulent.';
     const processedDescription2 = 'Feeding balanced data into a Machine Learning model reduces biasness, resulting in a more robust model.';
 
@@ -93,7 +93,7 @@ const DatasetSummary = () => {
 
     return (
         <div style={styles.container}>
-            <h1 style={styles.title}>Dataset</h1>
+            <h1 style={styles.title}>DATASET</h1>
             <div style={styles.content}>
                 <div style={styles.chartContainer}>
                     <Bar data={chartData} options={options} />
@@ -101,13 +101,13 @@ const DatasetSummary = () => {
                 <div style={styles.details}>
                     <div style={styles.detailBox}>
                         <h2 style={styles.legitimate}>{chartData.datasets[0].data[0].toLocaleString()}</h2>
-                        <p>LEGITIMATE</p>
+                        <p><strong>LEGITIMATE</strong></p>
                         <p>{description}</p>
                     </div>
                     <div style={styles.divider}></div>
                     <div style={styles.detailBox}>
                         <h2 style={styles.fraudulent}>{chartData.datasets[1].data[0].toLocaleString()}</h2>
-                        <p>FRAUDULENT</p>
+                        <p><strong>FRAUDULENT</strong></p>
                         <p>{description2}</p>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ const DatasetSummary = () => {
             <button onClick={handleToggleData} style={styles.button}>
                 {isProcessed ? 'Review Original Dataset' : 'Process Unbalanced Data'}
             </button>
-        </div>
+        </div>  
     );
 };
 
@@ -128,12 +128,15 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        width: '100%',
+        height: '100vh',
         boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',
     },
     title: {
         fontSize: '2rem',
         marginBottom: '20px',
         color: '#000',
+        fontFamily: 'system-ui'
     },
     content: {
         display: 'flex',
@@ -143,7 +146,9 @@ const styles = {
         flexDirection: 'row',
     },
     chartContainer: {
-        width: '50%',
+        width: '80%',
+        maxWidth: '600px',
+        margin: 'auto',
         display: 'flex',
         justifyContent: 'center',
     },
