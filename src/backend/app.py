@@ -11,6 +11,8 @@ import pandas as pd
 import numpy as np
 import sqlite3
 
+import os
+
 def calculate_median(transaction_amounts):
     return np.median(transaction_amounts) if transaction_amounts else 0
 
@@ -357,13 +359,14 @@ def summary():
         conn = sqlite3.connect("database.db")
         conn.row_factory = sqlite3.Row
         cur = conn.cursor()
+        print("....")
         cur.execute('''
         SELECT transactions.id AS transaction_id, 
             c.name AS cust_name, 
-            transaction_amount, 
-            used_chip, 
-            used_pin, 
-            online_order, 
+            transaction_amount,
+            used_chip,
+            used_pin,
+            online_order,
             l.name AS loc_name,
             cl.name AS cust_home_location,
             dist_from_home, 
@@ -378,7 +381,27 @@ def summary():
         ''')
         rows = cur.fetchall()
         conn.close()
-        return render_template("summary.html", rows=rows)
+        
+        transactions = []
+        for row in rows:
+            transactions.append({
+                'id': row['transaction_id'],
+                'customer_name': row['cust_name'], 
+                'transaction_amount': row['transaction_amount'],
+                'used_chip': row['used_chip'],
+                'used_pin': row['used_pin'],
+                'location': row['loc_name'],
+                'online_order': row['online_order'],
+                'cust_home_location': row['cust_home_location'],
+                'distance_from_home': row['dist_from_home'],
+                'distance_from_last_transaction': row['dist_from_last_transaction'],
+                'repeat_retailer': row['repeat_retailer'],
+                'ratio_to_median_spendings': row['ratio_to_median_spendings'],
+                'prediction': 'Flagged Fraudulent' if int(row['prediction']) == 1 else 'Flagged Legitimate'
+            })
+        # transactions = []
+        # print(transactions)
+        return jsonify(transactions)
     
     except Exception as e:
         return jsonify({"error": str(e)})
@@ -386,6 +409,7 @@ def summary():
 @app.route('/get_map')
 def get_map():
     try:
+        print('get map called')
         # Fetch transaction and customer home locations and generate map
         conn = sqlite3.connect("database.db")
         conn.row_factory = sqlite3.Row
@@ -416,6 +440,7 @@ def get_map():
         transaction_locations = []
         predictions = []
         transaction_amounts = []
+
         for row in rows:
             cust_home_location.add(row['cust_home_location'])
             transaction_locations.append(row['loc_name'])
@@ -423,9 +448,10 @@ def get_map():
             transaction_amounts.append(row['transaction_amount'])
 
         cust_home_location = list(cust_home_location)[0]
+        print(cust_home_location)
         BASE_URL = "https://nominatim.openstreetmap.org/search?format=json"
         headers = {"User-Agent": "TestFraudDetection"}
-
+        #Plot the customer location first
         response = requests.get(f"{BASE_URL}&q={cust_home_location}", headers=headers)
         data = response.json()
         latitude = data[0].get('lat')
@@ -436,6 +462,7 @@ def get_map():
         folium.Marker(location=home_loc, popup=cust_home_location).add_to(m)
         prev_loc = home_loc
 
+        #Plot the transactions location
         for i, (loc, prediction, transaction_amount) in enumerate(zip(transaction_locations, predictions, transaction_amounts), start=1):
             response = requests.get(f"{BASE_URL}&q={loc}", headers=headers)
             data = response.json()
@@ -445,12 +472,20 @@ def get_map():
             folium.Marker(location=transaction_loc, popup=loc).add_to(m)
             folium.PolyLine([prev_loc, transaction_loc], popup=f"Transaction {i}: {transaction_loc}").add_to(m)
             prev_loc = transaction_loc
-            # time.sleep(1)
+            time.sleep(1)
 
-        map_filename = f"static/map.html"
+        current_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of app.py
+        static_dir = os.path.join(current_dir, 'static')  # Path to the static folder
+        map_filename = os.path.join(static_dir, 'map.html')  # Full path for the map file
+        os.makedirs(static_dir, exist_ok=True)
+
+        print(static_dir)
+        # map_filename = "/static/map.html"
+        # print(map_filename)
         m.save(map_filename)
-        
-        return jsonify({"map_url": map_filename})
+        print(f'Map saved at {map_filename}')
+        return jsonify({"map_url": "/static/map.html"})
+    
     except Exception as e:
         return jsonify({"error": str(e)})
 
