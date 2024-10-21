@@ -17,8 +17,8 @@ function Navbar({ isLoggedIn, username, toggleLogin }) {
         </div>
         <div className="d-flex align-items-center">
           {/* Dynamic Greeting */}
-          {isLoggedIn && (
-            <span className="navbar-text text-light me-3" style={{ fontSize: '1.5rem' }} >Hello, {username}!</span>
+          {isLoggedIn && username && (
+            <span className="navbar-text text-light me-3" style={{ fontSize: '1.5rem' }}>Hello, {username}!</span>
           )}
           <form className="d-flex" role="search">
             {!isLoggedIn ? (
