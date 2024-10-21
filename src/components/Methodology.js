@@ -5,6 +5,7 @@ import DatasetFeatures from './DatasetFeatures';
 import CorrelationAnalysis from './CorrelationAnalysis';
 import DataProcessing from './DataProcessing';
 import MachineLearningModels from './MachineLearningModels';
+import EvaluationMatrix from './EvaluationMatrix';
 
 function Methodology() {
   return (
@@ -18,6 +19,8 @@ function Methodology() {
       <DataProcessing />
       <br></br>
       <MachineLearningModels />
+      <br></br>
+      <EvaluationMatrix />
       {/* <h2 className="mb-4">Our AI Methodology</h2> */ }
   {/* <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>1. Explanation of AI Methodology</h4>
@@ -28,14 +31,7 @@ function Methodology() {
         </p>
       </div> */}
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>2. Dataset We Used</h4>
-        <p>
-          We used the <strong>Credit Card Fraud dataset from Kaggle</strong>, which contains 1 million data records. 
-          The dataset is heavily imbalanced, with the majority of records being legitimate and only a small percentage representing fraudulent cases. 
-          It includes various features such as distance, amount, transaction type, and whether the transaction is an online order.
-        </p>
-      </div>
+    
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>3. Sampling the Dataset</h4>
