@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import DatasetSummary from './DatasetSummary';
 import DatasetFeatures from './DatasetFeatures';
+import CorrelationAnalysis from './CorrelationAnalysis';
 
 function Methodology() {
   return (
@@ -9,6 +10,8 @@ function Methodology() {
       <DatasetSummary />
       <br></br>
       <DatasetFeatures />
+      <br></br>
+      <CorrelationAnalysis />
       {/* <h2 className="mb-4">Our AI Methodology</h2> */ }
   {/* <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>1. Explanation of AI Methodology</h4>
