@@ -41,3 +41,22 @@
     padding-bottom: 50px; /* Adjust this based on the footer height */
   }
   
+  .animated-arrow {
+  color: red; /* Set the arrow color to red */
+  font-size: 24px;
+  position: absolute;
+  top: -30px; /* Adjust this value to position the arrow higher */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+  50% {
+    transform: translateY(10px) translateX(-50%);
+  }
+}
+

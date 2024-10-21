@@ -6,6 +6,9 @@ import article2 from '../images/article2.png';
 import article3 from '../images/article3.png';
 import article4 from '../images/article4.png';
 import research from '../images/researchmethod.jpg';
+import stakeholders from '../images/stakeholders.png';
+import stakeholderanalysis from '../images/stakeholderanalysis.png';
+import racichart from '../images/racichart.png';
 
 function Research() {
   return (
@@ -15,7 +18,9 @@ function Research() {
       <img src={research} alt="Research image from google" className="img-fluid mb-5" />
 
       
-      <div style={{ backgroundColor: '#DDE9F7', padding: '15px'}}>
+      <div style={{ backgroundColor: '#DDE9F7', padding: '15px',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)'
+      }}>
         <p style={{textAlign: 'justify'}}>
           <h5><b>Why is AI Fraud Detection System important?</b></h5>
           
@@ -74,7 +79,18 @@ function Research() {
   </div>
 </div>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid' }}>
+      <div className="border rounded p-3 mb-4" style={{ 
+        borderColor: '#FF0000',
+        borderWidth: '2px',
+        borderStyle: 'solid',
+        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
+        borderRadius: '10px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100%',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',
+       }}>
         <h3>About the Project</h3>
         <p style={{textAlign: 'justify'}}>
           In this section, we will share the key findings from our research on improving fraud detection using Artificial Intelligence (AI). This project focuses on how AI can be used to better identify and prevent fraud in financial transactions.
@@ -84,18 +100,42 @@ function Research() {
           <br></br>
           <br></br>
           <ol style={{ paddingLeft: '20px', listStyleType: 'decimal', margin: 0}}>
-        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}> <b>Project Purpose:</b> The goal of this project is to develop an AI-based system that can quickly and accurately detect fraud. This system will help reduce financial loss and increase security for businesses and customers. </li>
-        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Problem Statement:</b> Fraud tactics are becoming more sophisticated, and traditional methods are no longer effective. This project aims to find a better solution by using AI to detect fraudulent activities more efficiently.</li>
-        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Technical Solution:</b> We used machine learning algorithms to analyze patterns in financial transactions and spot unusual behavior that could indicate fraud. This section explains the tools and methods we used to build this system and how it works.</li>
-        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Stakeholder Impact:</b> This project will benefit different groups, such as banks, businesses, and customers. By improving fraud detection, we can help financial institutions protect their customers and reduce risks.</li>
-        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Conclusion:</b> In the conclusion, we summarize our findings and suggest next steps for improving the system. We also discuss how the system can be used in the real world and how it could be further developed.</li>
+        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}> <b>Project Purpose:</b> 
+        <br></br>To determine what an AI fraud detection system can achieve or solve. </li>
+        <br></br>
+               
+        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Problem Statement:</b>
+        <br></br>
+        Fraud techniques are evolving, making traditional methods less effective. This project seeks to improve detection by using AI for more efficient fraud identification.</li>
+        <br></br>
+
+        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Technical Solution:</b>
+        <br></br>
+        Comprehensive explanations can be found under "
+          <a href="methodology" style={{ fontWeight: 'bold', textDecoration: 'none' }}>
+            Our AI Methodology
+          </a>".
+        </li>
+        <br></br>
+
+        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Stakeholders' Impact:</b>
+        <br></br>
+        This project benefits various groups, such as banks, businesses, and customers. By improving fraud detection, financial institutions can better protect their customers and reduce risks.</li>
+        <br></br>
+
+        <li style={{ listStylePosition: 'inside', marginBottom: '5px' }}><b>Conclusion:</b>
+        <br></br>
+        A summary of findings and suggestions for improving the system, along with a discussion on its real-world applications and future development.</li>
       </ol>
         </p>
             
        
       </div>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
+      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid',
+        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',
+       }}>
         <h3>Project Purpose</h3>
         <p style={{textAlign: 'left', padding: '10px'}}>
             {/* Icon here */}
@@ -120,13 +160,23 @@ function Research() {
       {/* ... your existing content before the table ... */}
       <br></br>
       <h3>Research Findings</h3>
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
+        <p style={{ fontSize: '20px' }}>
+          Click on the articles to read the full version.
+        </p>
+      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)'
+       }}>
 
         <table className="table table-striped">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Articles</th>
+
+               <th scope="col" style={{ position: 'relative', textAlign: 'center' }}>
+                <span className="animated-arrow">▼</span>
+                Articles
+              </th>
+
               <th scope="col">Types of fraud</th>
               <th scope="col">Summary of articles</th>
             </tr>
@@ -136,7 +186,9 @@ function Research() {
             <tr>
               <th scope="row">1</th>
               <td style={{ width: '40%' }}>
+                <a href="https://www.straitstimes.com/singapore/more-than-110-suspicious-bank-accounts-with-over-400k-blocked-by-uob-or-seized-by-police" target="_blank" rel="noopener noreferrer">
                 <img src={article1} alt="article 1" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
+                </a>
               </td>
               <td>Identification of accounts with significant cash holdings</td>
               <td>
@@ -147,7 +199,9 @@ function Research() {
             <tr>
               <th scope="row">2</th>
               <td>
+                <a href="https://www.straitstimes.com/singapore/woman-scammed-of-over-213k-would-have-lost-500k-more-without-police-bank-intervention" target="_blank" rel="noopener noreferrer">
                 <img src={article2} alt="article 2" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
+                </a>
               </td>
               <td>Large transaction from potential scammed victims
               </td>
@@ -159,7 +213,9 @@ function Research() {
             <tr>
               <th scope="row">3</th>
               <td>
+                <a href="https://www.channelnewsasia.com/singapore/scam-police-singapore-hong-kong-uob-dbs-bank-technical-support-4305966" target="_blank" rel="noopener noreferrer">
                 <img src={article3} alt="article 3" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
+                </a>
               </td>
               <td>Large international transaction (potential fraud alert)
               </td>
@@ -172,7 +228,9 @@ Over S$370,000 was recovered after Singapore and Hong Kong police, along with tw
             <tr>
               <th scope="row">4</th>
               <td>
+                <a href="https://www.straitstimes.com/singapore/3-arrested-bank-accounts-with-over-128m-seized-over-suspected-scam-related-activities" target="_blank" rel="noopener noreferrer">
                 <img src={article4} alt="article 4" className="img-fluid mb-2" style={{ width: '500px', height: 'auto' }} />
+                </a>
               </td>
               <td>Utilised corporate bank accounts for fraudulent activities
               </td>
@@ -192,17 +250,19 @@ Three individuals were arrested for their suspected involvement in scam-related 
 
 
       <h1>Hence...</h1>
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
+      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid', background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)', boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)', }}>
         <h4>Problem Statement</h4>
         <p style={{textAlign: 'justify'}}>
           Traditional fraud detection systems struggle to handle the growing complexity of fraud, especially when it varies across regions. Many systems can't effectively analyze or adapt to local transaction patterns, causing delays in detecting fraud. This puts banks at higher risk of undetected fraud, resulting in financial losses and reduced customer trust.
-          <br></br><br></br>
+          </p>
+         
+        <p style={{ fontSize: '18px' }}>
           A more adaptive, region-specific solution is needed to respond to local threats and evolving fraud tactics.
-
         </p>
+        
       </div>
 
-      <div style={{ borderColor: '#D1E0F3', borderWidth: '2px', borderRadius: '50px', borderStyle: 'solid', backgroundColor: '#E7EFF9' }}>
+      <div style={{ borderColor: '#D1E0F3', borderWidth: '2px', borderRadius: '50px', borderStyle: 'solid', background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)', boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)' }}>
             <div style={{ fontSize: '50px', color: '#DAA600' }}>
               <i class="bi bi-key"></i>
             </div>
@@ -212,7 +272,7 @@ Three individuals were arrested for their suspected involvement in scam-related 
               <div className="row mb-4">
                 {/* Features */}
                 <div className="col-md-3">
-                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white' }}>
+                  <div className="border rounded p-3" style={{ borderColor: '#FF0000', borderWidth: '2px', borderStyle: 'solid', backgroundColor: 'white', }}>
                     
                     <h4>Feature 1</h4>
                     <p style={{textAlign: 'justify'}}>
@@ -317,13 +377,219 @@ Three individuals were arrested for their suspected involvement in scam-related 
 
 <br></br>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>6. Data Scaling</h4>
-        <p>
-          We scaled the dataset to ensure that features with larger ranges do not disproportionately affect the model's training process. 
-          Scaling improves the convergence of gradient descent algorithms used in model training.
+      <div style={{ borderColor: '#e4f2f7', borderWidth: '2px',
+        borderStyle: 'solid',
+        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
+        borderRadius: '10px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100%',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',padding: '30px' }}>
+          
+      <h4>Stakeholders' Impact</h4>
+
+        <p style={{textAlign: 'justify'}}>
+          <b>Stakeholder:</b> Any individual, group, or party that has an interest in an organization and the outcomes of its actions.
         </p>
+        
+        <hr />
+
+        <p style={{ fontSize: '25px' }}>
+          Types of Stakeholders:
+          <br></br>
+          <img src={stakeholders} alt="types of stakeholders" className="img-fluid mb-2" style={{ width: '60%', height: 'auto' }} />
+          <br></br>
+
+          <hr style={{ 
+          border: 'none', 
+          borderTop: '1px solid black', 
+          margin: '20px 0', 
+          width: '100%' 
+        }} />
+        
+          Stakeholder Analysis:
+            <p style={{ fontSize: '15px' }}>
+              The power/interest grid is a matrix used for categorising stakeholders during a change project to allow them to be effectively managed. 
+              <br></br>
+              Stakeholders are plotted on the grid in relation to the power and interest they have in respect of the project.
+            </p>
+              <img src={stakeholderanalysis} alt="stakeholder analysis" className="img-fluid mb-2" style={{ width: '60%', height: 'auto' }} />
+              <br></br><br></br>
+
+            <hr style={{ 
+              border: 'none', 
+              borderTop: '1px solid black', 
+              margin: '20px 0', 
+              width: '100%' 
+            }} />
+
+            RACI Chart (RAM):
+            <p style={{ fontSize: '15px' }}>
+              The RACI Chart, also known as a <b> Responsibility Assignment Matrix (RAM) </b>, provide various advantages to businesses, including: <b> Improved clarity in roles and responsibilities in a project.</b> This help set clear expectations for project roles and ensure effective role distribution. By specifying who is responsible, accountable, consulted, and informed for each task, they minimize confusion and overlap.
+              <br></br><br></br>
+              <img src={racichart} alt="raci chart" className="img-fluid mb-2" style={{ width: '100%', height: 'auto' }} />
+            </p>          
+           </p>
+
+           <p style={{ fontSize: '25px', textAlign:'justify' }}>
+            Explanation of RACI Roles:
+          </p>
+            <p style ={{textAlign:'justify'}}>
+              <ul>
+                <li><b>Responsible (R):</b> The stakeholder(s) doing the work to complete the task. For example, Data Scientists/AI Engineers are responsible for model training and testing.</li>
+
+                <li><b>Accountable (A):</b> The stakeholder(s) ultimately answerable for the task's success. This is usually the project owner or the business leader.</li>
+
+                <li><b>Consulted (C):</b> These stakeholders provide input or advice and are consulted before decisions are made. For example, Regulators and Compliance Authorities are consulted for legal checks.</li>
+
+                <li><b>Informed (I):</b> Stakeholders who need to be kept in the loop but do not directly contribute to the task. For example, Shareholders/Investors need to be informed about key developments but aren’t actively involved in day-to-day decisions.</li>
+
+              </ul>
+            </p>
+
+
+            <p style={{ fontSize: '25px', textAlign:'left' }}>
+              Key Tasks:
+            </p>
+
+            <p style ={{textAlign:'justify'}}>
+              <ol>
+                <li><b>System Requirements Gathering:</b>  Includes understanding business needs, regulatory requirements, and technical specifications.
+                </li>
+
+                <li><b>Budget Approval:</b> Securing financial resources for the project.</li>
+
+                <li><b>Vendor Selection/Procurement:</b> Choosing external solution providers for software or data. </li>
+
+                <li><b>System Design and Development:</b> Architecting and building the AI system.</li>
+
+                <li><b>Data Collection and Preprocessing:</b> Gathering and cleaning data for training AI models.</li>
+
+                <li><b>Model Training and Testing:</b> Developing and testing the AI model for fraud detection.</li>
+
+                <li><b>System Integration and Deployment:</b> Ensuring the AI system integrates with the company’s existing systems.</li>
+
+                <li><b>Security Audits and Testing:</b> Ensuring the system is secure and resistant to cyber threats.</li>
+
+                <li><b>Legal and Regulatory Compliance Checks:</b> Verifying that the system complies with legal requirements and industry regulations.</li>
+
+                <li><b>System Go-Live/Launch:</b>Deploying the system into production.</li>
+
+                <li><b>Post-launch Monitoring and Optimization:</b> Ongoing monitoring of system performance and making adjustments as necessary.</li>
+
+                <li><b>Reporting and Documentation: </b>Documenting the system's processes, results, and key metrics for internal and external stakeholders.</li>
+              </ol>
+
+              This RACI chart provides a clear overview of the roles and responsibilities for each task within the AI fraud detection system project.
+                  
+              </p>
       </div>
+      <br></br>
+
+
+      {/* For Risk Analysis */}
+
+      <div style={{ borderColor: '#e4f2f7', borderWidth: '2px',
+        borderStyle: 'solid',
+        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
+        borderRadius: '10px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100%',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',padding: '30px' }}>
+          
+      <h4>Risk Identification, Analysis & Response</h4>
+        
+        <p style={{textAlign: 'justify'}}>
+          Risk assessment helps <b>identify threats or weaknesses </b> that could affect the AI fraud detection system and its stakeholders. It then decides <b>how to address these risks and prioritizes</b> them based on their <b>likelihood </b>and <b>impact</b> on the business, considering the roles and interests of each stakeholder.
+        </p>
+
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">risk #</th>
+              <th scope="col">Stakeholder</th>
+              <th scope="col">Risk Events</th>
+              <th scope="col">Likelihood/Probability</th>
+              <th scope="col">Impact</th>
+              <th scope="col">Severity</th>
+              <th scope="col">Severity</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td style={{ width: '40%' }}>
+                <a href="https://www.straitstimes.com/singapore/more-than-110-suspicious-bank-accounts-with-over-400k-blocked-by-uob-or-seized-by-police" target="_blank" rel="noopener noreferrer">
+                <img src={article1} alt="article 1" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
+                </a>
+              </td>
+              <td>Identification of accounts with significant cash holdings</td>
+              <td>
+                Over 40 UOB bank accounts holding more than $210,000 were seized or blocked in a police investigation into individuals, aged 24 to 65, suspected of selling their banking credentials and ATM cards to scammers for commissions or fake investment profits. UOB identified and blocked 74 more accounts linked to money laundering, withholding an additional $195,000. Using <b>data analytics</b> and <b>network detection</b>, suspicious transactions and potential money mules were identified. The public is advised to download the ScamShield app and use two-factor authentication for added security.
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">2</th>
+              <td>
+                <a href="https://www.straitstimes.com/singapore/woman-scammed-of-over-213k-would-have-lost-500k-more-without-police-bank-intervention" target="_blank" rel="noopener noreferrer">
+                <img src={article2} alt="article 2" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
+                </a>
+              </td>
+              <td>Large transaction from potential scammed victims
+              </td>
+              <td>
+                A 75-year-old woman was scammed out of over S$213,000 in investments and was on the verge of losing an additional $500,000 when a Standard Chartered relationship manager intervened. The bank officer noticed her unusual banking behavior and flagged the outgoing transfers to various accounts, preventing further financial loss.
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <a href="https://www.channelnewsasia.com/singapore/scam-police-singapore-hong-kong-uob-dbs-bank-technical-support-4305966" target="_blank" rel="noopener noreferrer">
+                <img src={article3} alt="article 3" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
+                </a>
+              </td>
+              <td>Large international transaction (potential fraud alert)
+              </td>
+              <td>
+                
+Over S$370,000 was recovered after Singapore and Hong Kong police, along with two banks, foiled a scam targeting a 70-year-old man. The victim had shared his bank credentials with a scammer, believing his computer was hacked. DBS detected suspicious transactions totaling S$180,000 sent to a Hong Kong account and immediately blocked further transfers, notifying Singapore's Anti-Scam Centre (ASC). The ASC contacted Hong Kong's Anti-Deception Coordination Centre (ADDC) and traced an additional S$240,000 missing from the victim's UOB account.
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">4</th>
+              <td>
+                <a href="https://www.straitstimes.com/singapore/3-arrested-bank-accounts-with-over-128m-seized-over-suspected-scam-related-activities" target="_blank" rel="noopener noreferrer">
+                <img src={article4} alt="article 4" className="img-fluid mb-2" style={{ width: '500px', height: 'auto' }} />
+                </a>
+              </td>
+              <td>Utilised corporate bank accounts for fraudulent activities
+              </td>
+              <td>
+                
+Three individuals were arrested for their suspected involvement in scam-related activities after a joint operation by police and DBS Bank. Over $1.28 million in bank accounts was seized. The trio allegedly gave their Singpass credentials to scammers for up to $2,000 per account, which were used to open fake businesses and bank accounts to facilitate scam-related transactions. Most victims had unknowingly handed over their Singpass details or clicked phishing links, often in response to fake job or loan offers, including ads on Telegram.
+              </td>
+            </tr>
+
+            
+            {/* Add more table rows for additional findings */}
+          </tbody>
+        </table>
+
+
+      </div>
+
+
+
+
+
+
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
         <h4>7. Correlation Analysis</h4>
