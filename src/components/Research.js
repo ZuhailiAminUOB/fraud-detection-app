@@ -498,7 +498,8 @@ Three individuals were arrested for their suspected involvement in scam-related 
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',padding: '30px' }}>
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',
+        padding: '30px' }}>
           
       <h4>Risk Identification, Analysis & Response</h4>
         
@@ -506,137 +507,214 @@ Three individuals were arrested for their suspected involvement in scam-related 
           Risk assessment helps <b>identify threats or weaknesses </b> that could affect the AI fraud detection system and its stakeholders. It then decides <b>how to address these risks and prioritizes</b> them based on their <b>likelihood </b>and <b>impact</b> on the business, considering the roles and interests of each stakeholder.
         </p>
 
+        <br></br>
+
+        <p style={{ fontSize: '25px', textAlign:'left' }}>
+              Risk Register:
+            </p>
+
         <table className="table table-striped">
           <thead>
             <tr>
               <th scope="col">risk #</th>
-              <th scope="col">Stakeholder</th>
               <th scope="col">Risk Events</th>
               <th scope="col">Likelihood/Probability</th>
               <th scope="col">Impact</th>
               <th scope="col">Severity</th>
-              <th scope="col">Severity</th>
+              <th scope="col">Response</th>
             </tr>
           </thead>
           
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td style={{ width: '40%' }}>
-                <a href="https://www.straitstimes.com/singapore/more-than-110-suspicious-bank-accounts-with-over-400k-blocked-by-uob-or-seized-by-police" target="_blank" rel="noopener noreferrer">
-                <img src={article1} alt="article 1" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
-                </a>
-              </td>
-              <td>Identification of accounts with significant cash holdings</td>
-              <td>
-                Over 40 UOB bank accounts holding more than $210,000 were seized or blocked in a police investigation into individuals, aged 24 to 65, suspected of selling their banking credentials and ATM cards to scammers for commissions or fake investment profits. UOB identified and blocked 74 more accounts linked to money laundering, withholding an additional $195,000. Using <b>data analytics</b> and <b>network detection</b>, suspicious transactions and potential money mules were identified. The public is advised to download the ScamShield app and use two-factor authentication for added security.
-              </td>
+                <td>Regulatory Non-compliance</td>
+                <td>Medium</td>
+                <td>High</td>
+                <td>High</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Regular audits and compliance checks.</li>
+                    <li>Legal team to monitor regulatory changes.</li>
+                    <li>Implement robust compliance tracking and reporting tools.</li>
+                  </ul>
+                </td>
             </tr>
 
             <tr>
               <th scope="row">2</th>
-              <td>
-                <a href="https://www.straitstimes.com/singapore/woman-scammed-of-over-213k-would-have-lost-500k-more-without-police-bank-intervention" target="_blank" rel="noopener noreferrer">
-                <img src={article2} alt="article 2" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
-                </a>
-              </td>
-              <td>Large transaction from potential scammed victims
-              </td>
-              <td>
-                A 75-year-old woman was scammed out of over S$213,000 in investments and was on the verge of losing an additional $500,000 when a Standard Chartered relationship manager intervened. The bank officer noticed her unusual banking behavior and flagged the outgoing transfers to various accounts, preventing further financial loss.
-              </td>
+                <td>Inaccurate Fraud Detection (False Positives/Negatives)</td>
+                <td>High</td>
+                <td>High</td>
+                <td>High</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Use balanced datasets for training.</li>
+                    <li>Incorporate manual review options for flagged transactions.</li>
+                    <li>Implement confidence thresholds and feedback loops.</li>
+                  </ul>
+                </td>
+                
+              
             </tr>
 
             <tr>
               <th scope="row">3</th>
-              <td>
-                <a href="https://www.channelnewsasia.com/singapore/scam-police-singapore-hong-kong-uob-dbs-bank-technical-support-4305966" target="_blank" rel="noopener noreferrer">
-                <img src={article3} alt="article 3" className="img-fluid mb-2" style={{ width: '200%', height: 'auto' }} />
-                </a>
-              </td>
-              <td>Large international transaction (potential fraud alert)
-              </td>
-              <td>
-                
-Over S$370,000 was recovered after Singapore and Hong Kong police, along with two banks, foiled a scam targeting a 70-year-old man. The victim had shared his bank credentials with a scammer, believing his computer was hacked. DBS detected suspicious transactions totaling S$180,000 sent to a Hong Kong account and immediately blocked further transfers, notifying Singapore's Anti-Scam Centre (ASC). The ASC contacted Hong Kong's Anti-Deception Coordination Centre (ADDC) and traced an additional S$240,000 missing from the victim's UOB account.
-              </td>
+                <td>Security Breaches (Data Breaches, Hacking)</td>
+                <td>Low</td>
+                <td>High</td>
+                <td>High</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Implement multi-layered security controls (encryption, access control, network monitoring).</li>
+                    <li>Regular penetration testing and vulnerability assessments.</li>
+                    <li>Incident response plan.</li>
+                  </ul>
+                </td>
+              
             </tr>
 
             <tr>
               <th scope="row">4</th>
-              <td>
-                <a href="https://www.straitstimes.com/singapore/3-arrested-bank-accounts-with-over-128m-seized-over-suspected-scam-related-activities" target="_blank" rel="noopener noreferrer">
-                <img src={article4} alt="article 4" className="img-fluid mb-2" style={{ width: '500px', height: 'auto' }} />
-                </a>
-              </td>
-              <td>Utilised corporate bank accounts for fraudulent activities
-              </td>
-              <td>
-                
-Three individuals were arrested for their suspected involvement in scam-related activities after a joint operation by police and DBS Bank. Over $1.28 million in bank accounts was seized. The trio allegedly gave their Singpass credentials to scammers for up to $2,000 per account, which were used to open fake businesses and bank accounts to facilitate scam-related transactions. Most victims had unknowingly handed over their Singpass details or clicked phishing links, often in response to fake job or loan offers, including ads on Telegram.
-              </td>
+                <td>Inadequate Budget/Financial Overruns</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Regularly track project expenses against budget.</li>
+                    <li>Forecast potential cost overruns and build contingencies.</li>
+                    <li>Prioritize key deliverables and features.</li>
+                  </ul>
+                </td>
             </tr>
 
-            
-            {/* Add more table rows for additional findings */}
+            <tr>
+              <th scope="row">5</th>
+                <td>Vendor Delays in Deliverables</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Regular performance reviews and communication with vendors.</li>
+                    <li>Have contingency plans and backup vendors in place.</li>
+                  </ul>
+                </td>
+            </tr>
+
+            <tr>
+              <th scope="row">6</th>
+                <td>Data Quality Issues (Missing or Biased Data)</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Implement robust data validation processes.</li>
+                    <li>Perform regular audits of data sources.</li>
+                    <li>Address biases in the training data using diverse and representative datasets.</li>
+                  </ul>
+                </td>
+            </tr>
+
+            <tr>
+              <th scope="row">7</th>
+                <td>Operational Disruption During Integration</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Conduct thorough testing before integration.</li>
+                    <li>Perform system stress tests and pilot runs.</li>
+                    <li>Train staff on new workflows and ensure robust documentation.</li>
+                  </ul>
+                </td>
+            </tr>
+
+            <tr>
+              <th scope="row">8</th>
+                <td>Legal Liability for False Results (Customer Disputes)</td>
+                <td>Low</td>
+                <td>High</td>
+                <td>Medium</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Develop clear communication policies with customers.</li>
+                    <li>Implement mechanisms for dispute resolution.</li>
+                  </ul>
+                </td>
+            </tr>
+
+            <tr>
+              <th scope="row">9</th>
+                <td>Increased False Confidence in AI</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Educate employees and stakeholders on the importance of human judgment.</li>
+                    <li>Monitor AI system performance regularly and recalibrate models.</li>
+                  </ul>
+                </td>
+            </tr>
+
+            <tr>
+              <th scope="row">10</th>
+                <td>Technical Debt and System Maintenance Challenges</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td>Medium</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Plan for regular system updates and maintenance schedules.</li>
+                    <li>Document system architecture and workflows.</li>
+                    <li>Invest in scalable infrastructure and long-term solution designs.</li>
+                  </ul>
+                </td>
+            </tr>
           </tbody>
         </table>
 
+        <p style={{ fontSize: '25px', textAlign:'justify' }}>
+          Explanation of Columns:
+        </p>
 
-      </div>
+        <p style ={{textAlign:'justify'}}>
+          <ul>
+            <li>Risk Events: The potential threats or vulnerabilities that could impact the AI fraud detection system.</li>
+            <li>Likelihood: The probability of the risk occurring (Low, Medium, High).</li>          
+            <li>Impact: The potential consequence or severity of the risk on the project (Low, Medium, High).</li>
+            <li>Severity: Overall risk level calculated from likelihood and impact.</li>
+            <li>Response: Actions that can be taken to mitigate, transfer, or accept the risk.</li>
+          </ul>
+        </p>
 
-
-
-
-
-
-
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>7. Correlation Analysis</h4>
         <p>
-          We performed correlation analysis to identify relationships between features and their impact on fraud detection. 
-          This analysis helped us select the most relevant features for our model.
+          <h4>Conclusion:</h4>
+By identifying the specific risks, analyzing their likelihood and impact, and planning appropriate risk responses, UOB can proactively manage these risks and ensure a successful AI fraud detection system implementation.
         </p>
       </div>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>8. Model Training</h4>
-        <p>
-          We trained various machine learning models on the dataset, including Decision Trees, Random Forest, Logistic Regression, and Naive Bayes. 
-          Each model was evaluated for its performance in detecting fraudulent transactions.
-        </p>
-      </div>
+      <br></br>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>9. Model Optimization</h4>
-        <p>
-          We optimized the machine learning models, focusing on parameters such as the depth of trees in the Random Forest algorithm to improve accuracy.
-        </p>
-      </div>
+        <div style={{ borderColor: '#e4f2f7', borderWidth: '2px',
+        borderStyle: 'solid',
+        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
+        borderRadius: '10px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100%',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',
+        padding: '30px' }}>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>10. Neural Networks</h4>
-        <p>
-          For our Neural Network models, we plotted accuracy and loss metrics to determine the optimal architecture. 
-          These plots are crucial for evaluating the model's performance during training.
-        </p>
-        <img src="https://via.placeholder.com/800x400" alt="Neural Network Accuracy" className="img-fluid mb-2" />
-      </div>
+          <h3>Conclusion</h3>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>11. Results Comparison</h4>
-        <p>
-          We compared the results of all trained models using confusion matrices, which provide insights into the true positive, false positive, true negative, and false negative rates for each model.
-        </p>
-        <img src="https://via.placeholder.com/800x400" alt="Confusion Matrix" className="img-fluid mb-2" />
-      </div>
+        </div>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>Final Decision</h4>
-        <p>
-          Ultimately, we decided to utilize the Random Forest algorithm due to its impressive performance metrics, specifically high precision and recall in the confusion matrix, making it an ideal choice for fraud detection.
-        </p>
-      </div>
     </div>
   );
 }
