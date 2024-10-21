@@ -20,6 +20,7 @@ const DatasetFeatures = () => {
     return (
         <div style={styles.container}>
             <h1 style={styles.title}>FEATURES</h1>
+            <p>Click on each feature to visualize the distribution against fraud.</p>
             <div style={styles.boxContainer}>
                 <div style={styles.box}>
                     <h3 style={styles.boxTitle}>Distance</h3>
@@ -103,7 +104,7 @@ const styles = {
         fontSize: '1rem', // Paragraph font size
     },
     imageContainer: {
-        marginTop: '50px',
+        marginTop: '10px',
         width: '45%',
         height: '45%', // Allow height to adjust based on the aspect ratio of the image
         display: 'flex',
