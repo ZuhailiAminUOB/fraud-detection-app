@@ -30,7 +30,41 @@ function Research() {
   };
 
   return (
-    <div className="container my-4">
+    
+    <div className="container my-2">
+      {/* Navigation Bar */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a className="navbar-brand" href="#">TDP Project</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="#projectpurpose">Project Purpose</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#researchfindings">Research Findings</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#keyfeatures">Key Features</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#stakeholders'-impact">Stakeholders' Impact</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#riskanalysis">Risk Analysis</a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#conclusion">Conclusion</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <br></br>
+
       <h2 className="mb-4">Our Research Analysis</h2>
 
       <img src={research} alt="Research image from google" className="img-fluid mb-5" />
@@ -150,9 +184,9 @@ function Research() {
        
       </div>
 
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid',
+      <div id = "projectpurpose" className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid',
         background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
-        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',
+        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)'
        }}>
         <h3>Project Purpose</h3>
         <p style={{textAlign: 'left', padding: '10px'}}>
@@ -175,8 +209,7 @@ function Research() {
         </p>
       </div>
 
-      {/* ... your existing content before the table ... */}
-      <br></br>
+      <div id ="researchfindings">
       <h3>Research Findings</h3>
         <p style={{ fontSize: '20px' }}>
           Click on the articles to read the full version.
@@ -257,14 +290,12 @@ Over S$370,000 was recovered after Singapore and Hong Kong police, along with tw
 Three individuals were arrested for their suspected involvement in scam-related activities after a joint operation by police and DBS Bank. Over $1.28 million in bank accounts was seized. The trio allegedly gave their Singpass credentials to scammers for up to $2,000 per account, which were used to open fake businesses and bank accounts to facilitate scam-related transactions. Most victims had unknowingly handed over their Singpass details or clicked phishing links, often in response to fake job or loan offers, including ads on Telegram.
               </td>
             </tr>
-
-            
-            {/* Add more table rows for additional findings */}
           </tbody>
         </table>
       </div>
+    </div>
 
-      {/* ... your existing content after the table ... */}
+
 
 
       <h1>Hence...</h1>
@@ -395,7 +426,7 @@ Three individuals were arrested for their suspected involvement in scam-related 
 
 <br></br>
 
-      <div style={{ borderColor: '#e4f2f7', borderWidth: '2px',
+      <div id = "stakeholders'-impact" style={{ borderColor: '#e4f2f7', borderWidth: '2px',
         borderStyle: 'solid',
         background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
         borderRadius: '10px',
@@ -508,7 +539,7 @@ Three individuals were arrested for their suspected involvement in scam-related 
 
       {/* For Risk Analysis */}
 
-      <div style={{ borderColor: '#e4f2f7', borderWidth: '2px',
+      <div id="riskanalysis" style={{ borderColor: '#e4f2f7', borderWidth: '2px',
         borderStyle: 'solid',
         background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
         borderRadius: '10px',
@@ -718,7 +749,7 @@ By identifying the specific risks, analyzing their likelihood and impact, and pl
 
       <br></br>
 
-        <div style={{ borderColor: '#e4f2f7', borderWidth: '2px',
+        <div id="conclusion" style={{ borderColor: '#e4f2f7', borderWidth: '2px',
         borderStyle: 'solid',
         background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
         borderRadius: '10px',
