@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons
 import article1 from '../images/article1.png';
@@ -11,6 +11,24 @@ import stakeholderanalysis from '../images/stakeholderanalysis.png';
 import racichart from '../images/racichart.png';
 
 function Research() {
+  const [buttonText, setButtonText] = useState("↑ Scroll Up");
+
+  // Scroll to the top when the button is clicked
+  const scrollToTop = () => {
+    setButtonText("Scrolling..."); // Change button text immediately when clicked
+    
+    // Scroll to the top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scroll to the top
+    });
+
+    // After 1 second, reset the button text
+    setTimeout(() => {
+      setButtonText("↑ Scroll Up"); // Reset text back to default after scrolling
+    }, 1000);
+  };
+
   return (
     <div className="container my-4">
       <h2 className="mb-4">Our Research Analysis</h2>
@@ -714,6 +732,24 @@ By identifying the specific risks, analyzing their likelihood and impact, and pl
           <h3>Conclusion</h3>
 
         </div>
+
+        {/* Scroll to Top Button with dynamic text */}
+        <button
+          className="btn btn-secondary mt-4"
+          onClick={scrollToTop}
+          style={{
+              position: 'fixed',
+              bottom: '35px',  // Reduce the value to move the button up
+              right: '20px',
+              color: 'white',
+              padding: '10px 20px',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              zIndex: '1000',  // Ensure it's above other elements
+            }}
+         >
+          {buttonText} {/* Button text dynamically changes */}
+        </button>
 
     </div>
   );

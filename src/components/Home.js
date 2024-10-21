@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Carousel from './Carousel';
@@ -7,6 +7,24 @@ import RandomForestDescription from './RandomForestDescription';
 import RegisterPrompt from './RegisterPrompt';
 
 function Home({ isLoggedIn }) {
+  const [buttonText, setButtonText] = useState("↑ Scroll Up");
+
+  // Scroll to the top when the button is clicked
+  const scrollToTop = () => {
+    setButtonText("Scrolling..."); // Change button text immediately when clicked
+    
+    // Scroll to the top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scroll to the top
+    });
+
+    // After 1 second, reset the button text
+    setTimeout(() => {
+      setButtonText("↑ Scroll Up"); // Reset text back to default after scrolling
+    }, 1000);
+  };
+
   return (
     <div>
       {/* Carousel Outside the Container for Full Width */}
@@ -74,6 +92,24 @@ function Home({ isLoggedIn }) {
             <RandomForestDescription />
           </>
         )}
+
+        {/* Scroll to Top Button with dynamic text */}
+        <button
+          className="btn btn-secondary mt-4"
+          onClick={scrollToTop}
+          style={{
+              position: 'fixed',
+              bottom: '35px',  // Reduce the value to move the button up
+              right: '20px',
+              color: 'white',
+              padding: '10px 20px',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              zIndex: '1000',  // Ensure it's above other elements
+            }}
+         >
+          {buttonText} {/* Button text dynamically changes */}
+        </button>
       </div>
     </div>
   );
