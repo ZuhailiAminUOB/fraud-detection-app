@@ -28,11 +28,11 @@ function AboutUs() {
 
   // Team member data
   const teamMembers = [
-    { name: 'Zuhaili', photo: zuhaili, role: 'Developer' },
-    { name: 'Peh Shin', photo: shin, role: 'Developer' },
-    { name: 'Si Hui', photo: sihui, role: 'Developer' },
-    { name: 'Kheng Liang', photo: kl, role: 'Developer' },
-    { name: 'Pravina', photo: pravina, role: 'Developer' },
+    { name: 'Zuhaili', photo: zuhaili, role: 'Developer', link: 'https://www.linkedin.com/in/zuhailiamin/' },
+    { name: 'Peh Shin', photo: shin, role: 'Developer', link: 'https://www.linkedin.com/in/pehshin/' },
+    { name: 'Si Hui', photo: sihui, role: 'Developer', link: 'https://www.linkedin.com/in/ssh-simsihui/' },
+    { name: 'Kheng Liang', photo: kl, role: 'Developer', link: 'https://www.linkedin.com/in/low-kl/' },
+    { name: 'Pravina', photo: pravina, role: 'Developer', link: 'https://www.linkedin.com/in/pravina-v-dhanaraj-3230641a8/' },
   ];
 
   return (
@@ -56,6 +56,9 @@ function AboutUs() {
 
       <div className="border rounded p-3 mb-4" style={{ borderColor: '#000000', borderWidth: '2px', borderStyle: 'solid' }}>
         <h3 className="text-center">Meet the Team</h3>
+        <p style={{ fontSize: '20px' }}>
+          Click on our names to visit our LinkedIn page. <b>˶ᵔ ᵕ ᵔ˶</b>
+        </p>
         <div className="row justify-content-center">
           {teamMembers.map((member) => (
             <div className="col-md-2 text-center my-4" key={member.name}>
@@ -76,7 +79,17 @@ function AboutUs() {
                     e.currentTarget.style.transform = 'scale(1)'; // Reset scale
                   }}
                 />
-                <h5>{member.name}</h5>
+                <h5>
+                  <a href={member.link} target="_blank" rel="noopener noreferrer" style={{ color: '#2315bf', textDecoration: 'none' }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = '#00a9f7'; // Change color on hover
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = '#2315bf'; // Reset color on mouse leave
+                    }}>
+                    {member.name}
+                  </a>
+                </h5>
                 <p>{member.role}</p>
               </div>
             </div>
