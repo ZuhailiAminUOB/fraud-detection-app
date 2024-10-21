@@ -37,7 +37,6 @@ const EvaluationMatrix = () => {
                             <p style={styles.cellNumber}>17,142</p>
                         </div>
                     </div>
-                    
                 </div>
             )}
             <button onClick={toggleMatrix} style={styles.button}>

@@ -33,7 +33,7 @@ function Summary() {
 
   return (
     <div className="container my-4">
-      <h2>View A Summary of All Your Transactions</h2>
+      <h2>Transaction Summary</h2>
       <p>View your past transaction history and plot your transactions on a map for better visualization and tracking of your spending patterns.</p>
 
       <table className="table table-bordered table-hover">

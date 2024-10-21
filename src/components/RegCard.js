@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RegCard() {
   const [transactions, setTransactions] = useState([
     { name: '', homeState: '', annualIncome: '' },
   ]);
+
+  const navigate = useNavigate();
 
   const handleChange = (index, event) => {
     const newTransactions = [...transactions];
@@ -13,8 +16,12 @@ function RegCard() {
   };
 
   const handleAddTransaction = () => {
-    setTransactions([...transactions, { name: '', homeState: '', annualIncome: '' }]);
+    navigate('/newtrans'); // Navigate to /newtrans when button is clicked
   };
+
+  // const handleAddTransaction = () => {
+  //   setTransactions([...transactions, { name: '', homeState: '', annualIncome: '' }]);
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -50,7 +57,7 @@ function RegCard() {
       <form onSubmit={handleSubmit}>
         {transactions.map((transaction, index) => (
           <div key={index} className="border rounded p-4 mb-4">
-            <h5>Transaction {index + 1}</h5>
+            {/* <h5>Transaction {index + 1}</h5> */}
             <div className="mb-3">
               <label className="form-label">Name of User:</label>
               <input
@@ -94,7 +101,8 @@ function RegCard() {
           </div>
         ))}
         <div className="mb-3">
-          <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}>
+          {/* <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}> */}
+          <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}>  
             Add a New Transaction
           </button>
           <button type="submit" className="btn btn-success">

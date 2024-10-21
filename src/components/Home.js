@@ -71,7 +71,6 @@ function Home({ isLoggedIn }) {
         {!isLoggedIn && (
           <>
             <TechStack />
-            <RandomForestDescription />
           </>
         )}
       </div>
