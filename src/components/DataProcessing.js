@@ -9,19 +9,26 @@ const DataProcessing = () => {
                     <h3 style={styles.boxTitle}>Data Normalization</h3>
                     <p>Min Max Scaler is done to normalize the features.<br></br>
                         Some ML algorithms are sensitive to distance of data points.</p>
-                    <div style={styles.imageContainer}>
-                        <img
-                            src={require('../images/min_max_scaler.png')}
-                            alt={'123'}
-                            style={styles.image}
-                        />
-                    </div>
+
+                    <img
+                        src={require('../images/min_max_scaler.png')}
+                        alt={'Error loading image'}
+                        style={styles.image}
+                    />
+
 
                 </div>
                 <div style={styles.box}>
                     <h3 style={styles.boxTitle}>Train Test Split</h3>
                     <p>Train Test Split divides the model into 2 parts<br></br>
-                    Some ML algorithms are sensitive to distance of data points.</p>
+                        Some ML algorithms are sensitive to distance of data points.</p>
+
+                    <img
+                        src={require('../images/train_test_split.png')}
+                        alt={'Error loading image'}
+                        style={styles.image2}
+                    />
+
                 </div>
             </div>
         </div>
@@ -87,8 +94,12 @@ const styles = {
     },
     image: {
         maxWidth: '100%', // Ensures the image doesn't exceed the container's width
-        height: 'auto', // Keeps the aspect ratio intact
-        objectFit: 'contain', // Ensure image stays within the div and scales proportionately
+        height: '65%', // Keeps the aspect ratio intact
+    },
+    image2: {
+        maxWidth: '70%', // Ensures the image doesn't exceed the container's width
+        height: '70%', // Keeps the aspect ratio intact
+
     },
 };
 
