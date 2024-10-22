@@ -80,7 +80,7 @@ Split terminal
 
 When we are done installing, just do step 1 and 4
 
-Split terminal again, cd to backend
+Split terminal again, cd to src/backend
 1. python -m venv venv
 2. venv\Scripts\activate
 3. python create_table.py (if u want to reset the database)
