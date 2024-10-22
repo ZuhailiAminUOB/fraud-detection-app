@@ -86,6 +86,7 @@ function App() {
           <Route path="/regcard" element={<RegCard />} />
           <Route path="/newtrans" element={<NewTrans />} />
           <Route path="/summary" element={<Summary />} />
+          <Route path="/research" element={<Research />} />
         </Routes>
       </main>
 
