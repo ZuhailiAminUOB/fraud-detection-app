@@ -82,5 +82,5 @@ Split terminal again, cd to src/backend
 1. python -m venv venv
 2. venv\Scripts\activate
 3. python create_table.py (if u want to reset the database)
-4. pip install -r requirements.txt
+4. pip install -r requirements.txt (only need to install once)
 5. python app.py
