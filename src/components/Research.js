@@ -55,10 +55,6 @@ function Research() {
             <li className="nav-item">
               <a className="nav-link" href="#riskanalysis">Risk Analysis</a>
             </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#conclusion">Conclusion</a>
-            </li>
           </ul>
         </div>
       </nav>
