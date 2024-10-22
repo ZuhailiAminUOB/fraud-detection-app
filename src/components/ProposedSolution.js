@@ -11,11 +11,11 @@ const ProposedSolution = () => {
                         if the customer frequently travels for work or is known to make high-value purchases from
                         various locations, the alogrithm should reduce the weight of distance related features.
                     </p>
-                    <h3 style={styles.boxTitle}>How: <br></br>Real-time Location Tracking</h3>
+                    <h3 style={styles.boxTitle}><strong>How:</strong> <br></br>Real-time Location Tracking</h3>
                     <p>Tracking (with customer consent) via mobile app to cross-reference cardholder's actual location and transaction location.</p>
                     
                     <h3 style={styles.boxTitle}>Customer Travel Notification</h3>
-                    <p></p>
+                    <p>Allow customers to inform the bank in advance of upcoming travel. If a transaction occurs in a location within the specified travel region, lower the fraud score for that transaction.</p>
                 </div>
                 
             </div>
