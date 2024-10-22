@@ -477,11 +477,7 @@ Three individuals were arrested for their suspected involvement in scam-related 
             <p style={{ fontSize: '15px' }}>
               The RACI Chart, also known as a <b> Responsibility Assignment Matrix (RAM) </b>, provide various advantages to businesses, including: <b> Improved clarity in roles and responsibilities in a project.</b> This help set clear expectations for project roles and ensure effective role distribution. By specifying who is responsible, accountable, consulted, and informed for each task, they minimize confusion and overlap.
               <br></br><br></br>
-              <img src={racichart} alt="raci chart" className="img-fluid mb-2" style={{ width: '100%', height: 'auto' }} />
-            </p>          
-           </p>
-
-           <p style={{ fontSize: '25px', textAlign:'justify' }}>
+              <p style={{ fontSize: '25px', textAlign:'justify' }}>
             Explanation of RACI Roles:
           </p>
             <p style ={{textAlign:'justify'}}>
@@ -496,7 +492,9 @@ Three individuals were arrested for their suspected involvement in scam-related 
 
               </ul>
             </p>
-
+              <img src={racichart} alt="raci chart" className="img-fluid mb-2" style={{ width: '100%', height: 'auto' }} />
+            </p>          
+           </p>
 
             <p style={{ fontSize: '25px', textAlign:'left' }}>
               Key Tasks:
@@ -558,8 +556,22 @@ Three individuals were arrested for their suspected involvement in scam-related 
 
         <br></br>
 
+        <p style={{ fontSize: '25px', textAlign:'justify' }}>
+          Explanation of Columns:
+        </p>
+
+        <p style ={{textAlign:'justify'}}>
+          <ul>
+            <li><b>Risk Events:</b> The potential threats or vulnerabilities that could impact the AI fraud detection system.</li>
+            <li><b>Likelihood:</b> The probability of the risk occurring (Low, Medium, High).</li>          
+            <li><b>Impact:</b> The potential consequence or severity of the risk on the project (Low, Medium, High).</li>
+            <li>Severity: Overall risk level calculated from likelihood and impact.</li>
+            <li><b>Response:</b> Actions that can be taken to mitigate, transfer, or accept the risk.</li>
+          </ul>
+        </p>
+
         <p style={{ fontSize: '25px', textAlign:'left' }}>
-              Risk Register:
+              <b>Risk Register:</b>
             </p>
 
         <table className="table table-striped">
@@ -726,20 +738,6 @@ Three individuals were arrested for their suspected involvement in scam-related 
             </tr>
           </tbody>
         </table>
-
-        <p style={{ fontSize: '25px', textAlign:'justify' }}>
-          Explanation of Columns:
-        </p>
-
-        <p style ={{textAlign:'justify'}}>
-          <ul>
-            <li>Risk Events: The potential threats or vulnerabilities that could impact the AI fraud detection system.</li>
-            <li>Likelihood: The probability of the risk occurring (Low, Medium, High).</li>          
-            <li>Impact: The potential consequence or severity of the risk on the project (Low, Medium, High).</li>
-            <li>Severity: Overall risk level calculated from likelihood and impact.</li>
-            <li>Response: Actions that can be taken to mitigate, transfer, or accept the risk.</li>
-          </ul>
-        </p>
 
         <p>
           <h4>Conclusion:</h4>
