@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RegCard() {
   const [transactions, setTransactions] = useState([
     { name: '', homeState: '', annualIncome: '' },
   ]);
+
+  const navigate = useNavigate();
 
   const handleChange = (index, event) => {
     const newTransactions = [...transactions];
@@ -13,13 +16,35 @@ function RegCard() {
   };
 
   const handleAddTransaction = () => {
-    setTransactions([...transactions, { name: '', homeState: '', annualIncome: '' }]);
+    navigate('/newtrans'); // Navigate to /newtrans when button is clicked
   };
+
+  // const handleAddTransaction = () => {
+  //   setTransactions([...transactions, { name: '', homeState: '', annualIncome: '' }]);
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
-    console.log(transactions);
+    
+    fetch('http://localhost:5000/regcard', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(transactions[0]), // Sending only the first transaction for now
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.error) {
+        console.error('Error:', data.error);
+      } else {
+        console.log('Success:', data.message);
+        alert('Card registered successfully!');
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   };
 
   return (
@@ -32,7 +57,7 @@ function RegCard() {
       <form onSubmit={handleSubmit}>
         {transactions.map((transaction, index) => (
           <div key={index} className="border rounded p-4 mb-4">
-            <h5>Transaction {index + 1}</h5>
+            {/* <h5>Transaction {index + 1}</h5> */}
             <div className="mb-3">
               <label className="form-label">Name of User:</label>
               <input
@@ -53,12 +78,12 @@ function RegCard() {
                 onChange={(event) => handleChange(index, event)}
                 required
               >
-                <option value="">Select your state</option>
-                <option value="New York">New York</option>
-                <option value="California">California</option>
-                <option value="Texas">Texas</option>
-                <option value="Florida">Florida</option>
-                <option value="Illinois">Illinois</option>
+                <option value="">Select your home location</option>
+                <option value="Temasek Polytechnic">Temaasek Polytechnic</option>
+                <option value="Singapore Polytechnic">Singapore Polytechnic</option>
+                <option value="Republic Polytechnic">Republic Polytechnic</option>
+                <option value="Nanyang Polytechnic">Nanyang Polytechnic</option>
+                <option value="Ngee Ann Polytechnic">Ngee Ann Polytechnic</option>
               </select>
             </div>
             <div className="mb-3">
@@ -75,8 +100,9 @@ function RegCard() {
           </div>
         ))}
         <div className="mb-3">
-          <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}>
-            Add a New Transaction
+          {/* <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}> */}
+          <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}>  
+            Simulate Transactions
           </button>
           <button type="submit" className="btn btn-success">
             Submit

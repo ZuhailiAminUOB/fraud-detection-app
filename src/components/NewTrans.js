@@ -15,10 +15,38 @@ function NewTrans() {
     setTransactionData({ ...transactionData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Placeholder for submitting the transaction data to the backend
-    console.log('Transaction data submitted:', transactionData);
+
+    // Prepare the data to be sent in the request
+    const data = {
+      name: transactionData.customerName,
+      sellerLocation: transactionData.sellerLocation,
+      amount: transactionData.transactionAmount,
+      chipOrPin: transactionData.chipOrPin,
+      onlineOrder: transactionData.onlineOrder,
+    };
+
+    try {
+      // Make a POST request to the Flask backend
+      const response = await fetch('http://localhost:5000/add_transaction', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Transaction data submitted successfully:', result);
+      } else {
+        console.error('Failed to submit transaction data:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error submitting transaction data:', error);
+    }
+
     // Reset the form
     setTransactionData({
       customerName: '',
@@ -60,8 +88,10 @@ function NewTrans() {
             <option value="VivoCity">VivoCity</option>
             <option value="Orchard Central">Orchard Central</option>
             <option value="Bugis Junction">Bugis Junction</option>
-            <option value="The Shoppes at Marina Bay Sands">The Shoppes at Marina Bay Sands</option>
+            <option value="Marina Bay Sands">Marina Bay Sands</option>
             <option value="Ion Orchard">Ion Orchard</option>
+            <option value="Shanghai">Shanghai</option>
+            <option value="Las Vegas">Las Vegas</option>
           </select>
         </div>
 

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5f7b2e7ff6ece0d0a1a50d4fe5f38073 {
+                    position: relative;
+                    width: 800.0px;
+                    height: 400.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5f7b2e7ff6ece0d0a1a50d4fe5f38073" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5f7b2e7ff6ece0d0a1a50d4fe5f38073 = L.map(
+                "map_5f7b2e7ff6ece0d0a1a50d4fe5f38073",
+                {
+                    center: [1.33318835, 103.77461234638255],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_12b53f147dd1ec0c3a109bed68218507 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_12b53f147dd1ec0c3a109bed68218507.addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+            var marker_630be759e9590b9f58ad02f11b8127a6 = L.marker(
+                [1.33318835, 103.77461234638255],
+                {}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_4119180d9aa00ec4614706eccb6f4d7e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed1675de3b0c1f10f7776832ec33b65c = $(`<div id="html_ed1675de3b0c1f10f7776832ec33b65c" style="width: 100.0%; height: 100.0%;">Ngee Ann Polytechnic</div>`)[0];
+                popup_4119180d9aa00ec4614706eccb6f4d7e.setContent(html_ed1675de3b0c1f10f7776832ec33b65c);
+            
+        
+
+        marker_630be759e9590b9f58ad02f11b8127a6.bindPopup(popup_4119180d9aa00ec4614706eccb6f4d7e)
+        ;
+
+        
+    
+    
+            var marker_194bc90e94adf0b7f61cdc21f739ae5b = L.marker(
+                [1.26437065, 103.82295373341057],
+                {}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_6dfe9275ba1107ca5bdbcff2a21a3bd6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9dea7fa383a0290553374b6210b696a4 = $(`<div id="html_9dea7fa383a0290553374b6210b696a4" style="width: 100.0%; height: 100.0%;">VivoCity</div>`)[0];
+                popup_6dfe9275ba1107ca5bdbcff2a21a3bd6.setContent(html_9dea7fa383a0290553374b6210b696a4);
+            
+        
+
+        marker_194bc90e94adf0b7f61cdc21f739ae5b.bindPopup(popup_6dfe9275ba1107ca5bdbcff2a21a3bd6)
+        ;
+
+        
+    
+    
+            var poly_line_c1adc3be04adf0c3d710bfb05f9d2fb5 = L.polyline(
+                [[1.33318835, 103.77461234638255], [1.26437065, 103.82295373341057]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_e9d2e2f662b48af3eddb037cdc6485e9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8cdf5e87913a82db5d0850ad515c34a9 = $(`<div id="html_8cdf5e87913a82db5d0850ad515c34a9" style="width: 100.0%; height: 100.0%;"><strong>Transaction</strong> 1                             <br><strong>Amount</strong>: $120.00                             <br><strong>Distance from home</strong>: 9.35 km                             <br><strong>Distance from last transaction</strong>: 0.00 km                             <br><strong>Prediction</strong>: Flagged Legitimate</div>`)[0];
+                popup_e9d2e2f662b48af3eddb037cdc6485e9.setContent(html_8cdf5e87913a82db5d0850ad515c34a9);
+            
+        
+
+        poly_line_c1adc3be04adf0c3d710bfb05f9d2fb5.bindPopup(popup_e9d2e2f662b48af3eddb037cdc6485e9)
+        ;
+
+        
+    
+    
+            var marker_6af5892c571b169d3e73fa15003a0afb = L.marker(
+                [1.29981525, 103.855923043014],
+                {}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_ca00e438b17a2ef997f996f735b0675d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f26cb16f9c7fefdb3ade0537d5268d14 = $(`<div id="html_f26cb16f9c7fefdb3ade0537d5268d14" style="width: 100.0%; height: 100.0%;">Bugis Junction</div>`)[0];
+                popup_ca00e438b17a2ef997f996f735b0675d.setContent(html_f26cb16f9c7fefdb3ade0537d5268d14);
+            
+        
+
+        marker_6af5892c571b169d3e73fa15003a0afb.bindPopup(popup_ca00e438b17a2ef997f996f735b0675d)
+        ;
+
+        
+    
+    
+            var poly_line_4475cfec40c30ad328849cb52704ce20 = L.polyline(
+                [[1.26437065, 103.82295373341057], [1.29981525, 103.855923043014]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_a01d3464492d4cba926249ba114a915a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1fc89ff4adaa402f9a2f0838c82abfaa = $(`<div id="html_1fc89ff4adaa402f9a2f0838c82abfaa" style="width: 100.0%; height: 100.0%;"><strong>Transaction</strong> 2                             <br><strong>Amount</strong>: $150.00                             <br><strong>Distance from home</strong>: 9.77 km                             <br><strong>Distance from last transaction</strong>: 5.38 km                             <br><strong>Prediction</strong>: Flagged Legitimate</div>`)[0];
+                popup_a01d3464492d4cba926249ba114a915a.setContent(html_1fc89ff4adaa402f9a2f0838c82abfaa);
+            
+        
+
+        poly_line_4475cfec40c30ad328849cb52704ce20.bindPopup(popup_a01d3464492d4cba926249ba114a915a)
+        ;
+
+        
+    
+    
+            var marker_e627af7b62b30558740bc83e78250754 = L.marker(
+                [1.26437065, 103.82295373341057],
+                {}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_d70249262f0ed051ddc7807604968c68 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb938a54f08522b550e2a4ae1cda2a83 = $(`<div id="html_bb938a54f08522b550e2a4ae1cda2a83" style="width: 100.0%; height: 100.0%;">VivoCity</div>`)[0];
+                popup_d70249262f0ed051ddc7807604968c68.setContent(html_bb938a54f08522b550e2a4ae1cda2a83);
+            
+        
+
+        marker_e627af7b62b30558740bc83e78250754.bindPopup(popup_d70249262f0ed051ddc7807604968c68)
+        ;
+
+        
+    
+    
+            var poly_line_b3cba3c21ba13706e91083516d2ae0d4 = L.polyline(
+                [[1.29981525, 103.855923043014], [1.26437065, 103.82295373341057]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_e6f2058a3491d66e2c9239207e0138d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_de8a0e848733d25d9ade15eeb00a2150 = $(`<div id="html_de8a0e848733d25d9ade15eeb00a2150" style="width: 100.0%; height: 100.0%;"><strong>Transaction</strong> 3                             <br><strong>Amount</strong>: $111.00                             <br><strong>Distance from home</strong>: 9.35 km                             <br><strong>Distance from last transaction</strong>: 5.38 km                             <br><strong>Prediction</strong>: Flagged Legitimate</div>`)[0];
+                popup_e6f2058a3491d66e2c9239207e0138d6.setContent(html_de8a0e848733d25d9ade15eeb00a2150);
+            
+        
+
+        poly_line_b3cba3c21ba13706e91083516d2ae0d4.bindPopup(popup_e6f2058a3491d66e2c9239207e0138d6)
+        ;
+
+        
+    
+    
+            var marker_2133d861b87ffbb8c4a1de7c49ea1c27 = L.marker(
+                [1.29981525, 103.855923043014],
+                {}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_82943598b5f14573a395fe2e3697a8a0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3760bb1c2372b329c2e5b93ae652439a = $(`<div id="html_3760bb1c2372b329c2e5b93ae652439a" style="width: 100.0%; height: 100.0%;">Bugis Junction</div>`)[0];
+                popup_82943598b5f14573a395fe2e3697a8a0.setContent(html_3760bb1c2372b329c2e5b93ae652439a);
+            
+        
+
+        marker_2133d861b87ffbb8c4a1de7c49ea1c27.bindPopup(popup_82943598b5f14573a395fe2e3697a8a0)
+        ;
+
+        
+    
+    
+            var poly_line_01e281704a860fec3c995a14a05759a7 = L.polyline(
+                [[1.26437065, 103.82295373341057], [1.29981525, 103.855923043014]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_2a06d776fafac97a0717f3ce3ffbb509 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0ab4d40ae6a1b7939fc8da874c5e3c55 = $(`<div id="html_0ab4d40ae6a1b7939fc8da874c5e3c55" style="width: 100.0%; height: 100.0%;"><strong>Transaction</strong> 4                             <br><strong>Amount</strong>: $111.00                             <br><strong>Distance from home</strong>: 9.77 km                             <br><strong>Distance from last transaction</strong>: 5.38 km                             <br><strong>Prediction</strong>: Flagged Legitimate</div>`)[0];
+                popup_2a06d776fafac97a0717f3ce3ffbb509.setContent(html_0ab4d40ae6a1b7939fc8da874c5e3c55);
+            
+        
+
+        poly_line_01e281704a860fec3c995a14a05759a7.bindPopup(popup_2a06d776fafac97a0717f3ce3ffbb509)
+        ;
+
+        
+    
+    
+            var marker_48f91994a7962783111c28e16c1e3196 = L.marker(
+                [1.29981525, 103.855923043014],
+                {}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_b4b53c11e66ec36740a2b4ae90062ca0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47bee7bbba7b9515d5b19f79952da484 = $(`<div id="html_47bee7bbba7b9515d5b19f79952da484" style="width: 100.0%; height: 100.0%;">Bugis Junction</div>`)[0];
+                popup_b4b53c11e66ec36740a2b4ae90062ca0.setContent(html_47bee7bbba7b9515d5b19f79952da484);
+            
+        
+
+        marker_48f91994a7962783111c28e16c1e3196.bindPopup(popup_b4b53c11e66ec36740a2b4ae90062ca0)
+        ;
+
+        
+    
+    
+            var poly_line_8fed769bbdada51437a11766bf0733c8 = L.polyline(
+                [[1.29981525, 103.855923043014], [1.29981525, 103.855923043014]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_510eefd3c768594ad13b13214044fb59 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca9865140fe2e86711cf548b571645f8 = $(`<div id="html_ca9865140fe2e86711cf548b571645f8" style="width: 100.0%; height: 100.0%;"><strong>Transaction</strong> 5                             <br><strong>Amount</strong>: $111.00                             <br><strong>Distance from home</strong>: 9.77 km                             <br><strong>Distance from last transaction</strong>: 0.00 km                             <br><strong>Prediction</strong>: Flagged Legitimate</div>`)[0];
+                popup_510eefd3c768594ad13b13214044fb59.setContent(html_ca9865140fe2e86711cf548b571645f8);
+            
+        
+
+        poly_line_8fed769bbdada51437a11766bf0733c8.bindPopup(popup_510eefd3c768594ad13b13214044fb59)
+        ;
+
+        
+    
+    
+            var marker_0ad4b7fac1fe92eb0a027ae57b68aec0 = L.marker(
+                [1.2836965, 103.8607226],
+                {}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_83ad549aedfbd99d2f0f6e007388d82e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_707bc56613267c9e475b6d161c6c94e8 = $(`<div id="html_707bc56613267c9e475b6d161c6c94e8" style="width: 100.0%; height: 100.0%;">Marina Bay Sands</div>`)[0];
+                popup_83ad549aedfbd99d2f0f6e007388d82e.setContent(html_707bc56613267c9e475b6d161c6c94e8);
+            
+        
+
+        marker_0ad4b7fac1fe92eb0a027ae57b68aec0.bindPopup(popup_83ad549aedfbd99d2f0f6e007388d82e)
+        ;
+
+        
+    
+    
+            var poly_line_affde89d7897b0cad481945b08371880 = L.polyline(
+                [[1.29981525, 103.855923043014], [1.2836965, 103.8607226]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5f7b2e7ff6ece0d0a1a50d4fe5f38073);
+        
+    
+        var popup_1c261f09d5244d60eac61ccb358ff540 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28c5067af83ec5170f2f8fe8b86efc47 = $(`<div id="html_28c5067af83ec5170f2f8fe8b86efc47" style="width: 100.0%; height: 100.0%;"><strong>Transaction</strong> 6                             <br><strong>Amount</strong>: $199.00                             <br><strong>Distance from home</strong>: 11.04 km                             <br><strong>Distance from last transaction</strong>: 1.87 km                             <br><strong>Prediction</strong>: Flagged Legitimate</div>`)[0];
+                popup_1c261f09d5244d60eac61ccb358ff540.setContent(html_28c5067af83ec5170f2f8fe8b86efc47);
+            
+        
+
+        poly_line_affde89d7897b0cad481945b08371880.bindPopup(popup_1c261f09d5244d60eac61ccb358ff540)
+        ;
+
+        
+    
+</script>
+</html>

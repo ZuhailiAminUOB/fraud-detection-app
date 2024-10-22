@@ -1,0 +1,14 @@
+Flask
+Flask-CORS
+itsdangerous
+Jinja2
+MarkupSafe
+six
+pandas
+numpy
+imbalanced-learn
+scikit-learn==1.3.2
+matplotlib
+joblib
+folium
+python-dotenv
