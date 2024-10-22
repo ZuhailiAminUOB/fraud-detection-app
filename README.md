@@ -85,4 +85,3 @@ Split terminal again, cd to backend
 3. python create_table.py (if u want to reset the database)
 4. pip install -r requirements.txt
 5. python app.py
-
