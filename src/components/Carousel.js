@@ -55,7 +55,7 @@ function Carousel() {
             <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
             <div className="carousel-caption d-flex flex-column justify-content-center align-items-center" style={{ top: '50%', transform: 'translateY(-50%)' }}>
               <h5 style={{ fontSize: '3rem', color: 'white', fontWeight: 'bold' }}>AI Capstone Project</h5>
-              <p style={{ fontSize: '1.5rem', color: 'white', fontWeight: 'bold' }}>Done by: Zuhaili, Pravina, Si Hui, Shin, and Keng Liang</p>
+              <p style={{ fontSize: '1.5rem', color: 'white', fontWeight: 'bold' }}>Done by: Zuhaili, Pravina, Si Hui, Shin, and Kheng Liang</p>
             </div>
           </div>
         </div>
