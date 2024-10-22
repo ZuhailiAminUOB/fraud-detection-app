@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Backend
+
+Follow these steps to activate the backend as well. 
+Split terminal
+1. cd reglog-backend
+2. Remove-Item -Recurse -Force node_modules
+3. npm install
+4. node index.js
+
+Split terminal again, cd to backend
+1. python -m venv venv
+2. venv\Scripts\activate
+3. python create_table.py (if u want to reset the database)
+4. pip install -r requirements.txt
+5. python app.py
+
