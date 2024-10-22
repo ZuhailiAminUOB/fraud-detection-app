@@ -28,11 +28,11 @@ function AboutUs() {
 
   // Team member data
   const teamMembers = [
-    { name: 'Zuhaili', photo: zuhaili, role: 'Developer', link: 'https://www.linkedin.com/in/zuhailiamin/' },
-    { name: 'Peh Shin', photo: shin, role: 'Developer', link: 'https://www.linkedin.com/in/pehshin/' },
-    { name: 'Si Hui', photo: sihui, role: 'Developer', link: 'https://www.linkedin.com/in/ssh-simsihui/' },
-    { name: 'Kheng Liang', photo: kl, role: 'Developer', link: 'https://www.linkedin.com/in/low-kl/' },
-    { name: 'Pravina', photo: pravina, role: 'Developer', link: 'https://www.linkedin.com/in/pravina-v-dhanaraj-3230641a8/' },
+    { name: 'Zuhaili', photo: zuhaili, link: 'https://www.linkedin.com/in/zuhailiamin/' },
+    { name: 'Peh Shin', photo: shin, link: 'https://www.linkedin.com/in/pehshin/' },
+    { name: 'Si Hui', photo: sihui, link: 'https://www.linkedin.com/in/ssh-simsihui/' },
+    { name: 'Kheng Liang', photo: kl, link: 'https://www.linkedin.com/in/low-kl/' },
+    { name: 'Pravina', photo: pravina, link: 'https://www.linkedin.com/in/pravina-v-dhanaraj-3230641a8/' },
   ];
 
   return (
@@ -90,7 +90,6 @@ function AboutUs() {
                     {member.name}
                   </a>
                 </h5>
-                <p>{member.role}</p>
               </div>
             </div>
           ))}
