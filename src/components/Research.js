@@ -561,7 +561,7 @@ Three individuals were arrested for their suspected involvement in scam-related 
             <li><b>Risk Events:</b> The potential threats or vulnerabilities that could impact the AI fraud detection system.</li>
             <li><b>Likelihood:</b> The probability of the risk occurring (Low, Medium, High).</li>          
             <li><b>Impact:</b> The potential consequence or severity of the risk on the project (Low, Medium, High).</li>
-            <li>Severity: Overall risk level calculated from likelihood and impact.</li>
+            <li><b>Severity:</b> Overall risk level calculated from likelihood and impact.</li>
             <li><b>Response:</b> Actions that can be taken to mitigate, transfer, or accept the risk.</li>
           </ul>
         </p>
