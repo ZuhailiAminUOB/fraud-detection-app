@@ -747,20 +747,7 @@ By identifying the specific risks, analyzing their likelihood and impact, and pl
 
       <br></br>
 
-        <div id="conclusion" style={{ borderColor: '#e4f2f7', borderWidth: '2px',
-        borderStyle: 'solid',
-        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(178, 255, 255, 0.6) 100%)',
-        borderRadius: '10px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '100%',
-        boxShadow: '10px 5px 5px rgba(0, 0, 0, 0.1)',
-        padding: '30px' }}>
 
-          <h3>Conclusion</h3>
-
-        </div>
 
         {/* Scroll to Top Button with dynamic text */}
         <button
