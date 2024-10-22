@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Header styles */
+.header {
+  background-color: #f8f9fa; /* Light background color for header */
+  padding: 10px 20px; /* Space around the header */
+  display: flex; /* Align items horizontally */
+  justify-content: space-between; /* Space between title and username */
+  align-items: center; /* Center items vertically */
+  border-bottom: 2px solid #ccc; /* Optional: bottom border for separation */
+}
+
+.header h1 {
+  margin: 0; /* Remove default margin */
+  color: #333; /* Title color */
+  font-size: 1.5rem; /* Adjust the font size as needed */
+}
+
+.header .username {
+  font-weight: bold; /* Make username bold */
+  color: #555; /* Color for the username */
+}
