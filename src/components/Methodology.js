@@ -7,6 +7,7 @@ import DataProcessing from './DataProcessing';
 import MachineLearningModels from './MachineLearningModels';
 import EvaluationMatrix from './EvaluationMatrix';
 import Limitations from './Limitations';
+import ProposedSolution from './ProposedSolution';
 
 function Methodology() {
   return (
@@ -24,13 +25,8 @@ function Methodology() {
       <EvaluationMatrix />
       <br></br>
       <Limitations />
-
-      <div className="border rounded p-3 mb-4" style={{ borderColor: '#343a40', borderWidth: '2px', borderStyle: 'solid' }}>
-        <h4>Final Decision</h4>
-        <p>
-          Ultimately, we decided to utilize the Random Forest algorithm due to its impressive performance metrics, specifically high precision and recall in the confusion matrix, making it an ideal choice for fraud detection.
-        </p>
-      </div>
+      <br></br>
+      <ProposedSolution />
     </div >
   );
 }

@@ -1,28 +1,23 @@
 import React from "react";
 
-const Limitations = () => {
+const ProposedSolution = () => {
     return (
         <div style={styles.container}>
-            <h1 style={styles.title}>LIMITATIONS</h1>
+            <h1 style={styles.title}>BUSINESS SOLUTION</h1>
             <div style={styles.boxContainer}>
                 <div style={styles.box}>
-                    <h3 style={styles.boxTitle}>Feature Limitations</h3>
-                    <p>In real-world conditions, fraudulent transactions are based
-                    on many other features such as transaction time, frequency, etc. </p>
-                    <h3 style={styles.boxTitle}>Generalization to Real-world Scenario</h3>
-                    <p>Transaction patterns and fraud tactics vary across regions, industries, and over time.</p>
-                    <h3 style={styles.boxTitle}>Dataset Imbalance</h3>
-                    <p>Fraud detection dataset typically suffer from class imbalance with fraudulent transactions being rare compared to legitimate ones.</p>
-                </div>
-                <div style={styles.box}>
-                    <h3 style={styles.boxTitle}>Dynamic Nature of Fraud</h3>
-                    <p>Kaggle dataset may not capture emerging fraud tactics. Models trained on outdated dataset become less effective overtime.</p>
-                    <h3 style={styles.boxTitle}>Bias and Ethical Concerns</h3>
-                    <p>Bias may be introduced based on geography, spending, or online behavior. Example, people who spend more overseas are more likely to trigger a fraud alert.
-                        This leads to unfair treatment of certain customer groups.
+                    <h3 style={styles.boxTitle}>Solution: Dynamic Fraud Scoring Implementation</h3>
+                    <p>Implement a system that adapts based on customer's transaction behaviors. For instance,
+                        if the customer frequently travels for work or is known to make high-value purchases from
+                        various locations, the alogrithm should reduce the weight of distance related features.
                     </p>
-
+                    <h3 style={styles.boxTitle}>How: <br></br>Real-time Location Tracking</h3>
+                    <p>Tracking (with customer consent) via mobile app to cross-reference cardholder's actual location and transaction location.</p>
+                    
+                    <h3 style={styles.boxTitle}>Customer Travel Notification</h3>
+                    <p></p>
                 </div>
+                
             </div>
         </div>
     );
@@ -96,4 +91,4 @@ const styles = {
     },
 };
 
-export default Limitations;
+export default ProposedSolution;
