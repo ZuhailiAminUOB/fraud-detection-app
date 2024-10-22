@@ -45,7 +45,31 @@ function Methodology() {
       <Limitations />
       <br></br>
       <ProposedSolution />
+
+      <button
+            className="btn btn-secondary mt-4"
+            onClick={scrollToTop}
+            style={{
+              position: 'fixed',
+              bottom: '40px',  // Place it at the bottom (behind the footer)
+              right: '20px',   // Align it to the right
+              color: 'white',
+              padding: '10px 20px',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              zIndex: '900',  // Ensure it's behind the footer
+              width: 'auto',  // Keep button small
+              display: 'inline-block',
+              whiteSpace: 'nowrap',
+              backgroundColor: '#6c757d',
+              opacity: 0.8,  // Slight transparency to ensure visibility
+            }}
+          >
+            {buttonText}
+        </button>
     </div >
+
+    
   );
 }
 
