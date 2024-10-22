@@ -7,7 +7,7 @@ import '../css/Register.css';
 // Validation Regex
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{12,24}$/;
-const REGISTER_URL = 'http://localhost:5000/register'; // Ensure this is correct
+const REGISTER_URL = 'http://localhost:5001/register'; // Ensure this is correct
 
 const Register = () => {
     const userRef = useRef();
@@ -63,7 +63,7 @@ const Register = () => {
     
         try {
             // Prepare request options
-            const response = await fetch('http://localhost:5000/register', {
+            const response = await fetch('http://localhost:5001/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
