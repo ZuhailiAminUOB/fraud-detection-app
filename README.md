@@ -78,8 +78,6 @@ Split terminal
 3. npm install
 4. node index.js
 
-When we are done installing, just do step 1 and 4
-
 Split terminal again, cd to src/backend
 1. python -m venv venv
 2. venv\Scripts\activate
