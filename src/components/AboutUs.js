@@ -98,20 +98,25 @@ function AboutUs() {
 
         {/* Scroll to Top Button with dynamic text */}
         <button
-          className="btn btn-secondary mt-4"
-          onClick={scrollToTop}
-          style={{
+            className="btn btn-secondary mt-4"
+            onClick={scrollToTop}
+            style={{
               position: 'fixed',
-              bottom: '35px',  // Reduce the value to move the button up
-              right: '20px',
+              bottom: '40px',  // Place it at the bottom (behind the footer)
+              right: '20px',   // Align it to the right
               color: 'white',
               padding: '10px 20px',
               fontWeight: 'bold',
               fontSize: '1rem',
-              zIndex: '1000',  // Ensure it's above other elements
+              zIndex: '900',  // Ensure it's behind the footer
+              width: 'auto',  // Keep button small
+              display: 'inline-block',
+              whiteSpace: 'nowrap',
+              backgroundColor: '#6c757d',
+              opacity: 0.8,  // Slight transparency to ensure visibility
             }}
-         >
-          {buttonText} {/* Button text dynamically changes */}
+          >
+            {buttonText}
         </button>
 
       </div>

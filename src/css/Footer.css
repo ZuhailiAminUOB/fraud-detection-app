@@ -10,7 +10,8 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000; /* Ensure it stays above other content */
-  }
+    height: 50px; /* Ensure the height is enough for the footer content */
+}
   
   .footer-content {
     display: flex;
@@ -58,5 +59,9 @@
   50% {
     transform: translateY(10px) translateX(-50%);
   }
+}
+
+body {
+    padding-bottom: 60px; /* Adjust this based on the footer height */
 }
 
