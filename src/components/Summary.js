@@ -34,8 +34,6 @@ function Summary() {
   return (
     <div className="container my-4">
       <h2>Transaction Summary</h2>
-      <p>View your past transaction history and plot your transactions on a map for better visualization and tracking of your spending patterns.</p>
-
       <table className="table table-bordered table-hover">
         <thead className="table-dark">
           <tr>
@@ -79,9 +77,7 @@ function Summary() {
         Load Map
       </button></div>
 
-      <div><h3>Transaction Map</h3></div>
-
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '40vh', marginTop: '50px'}}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '40vh', marginTop: '80px'}}>
         <div style={{ height: '410px', border: '2px solid #000', marginTop: '20px', width: '62%', justifyContent: 'center' }}>
           {loading ? ( // Conditionally render loading message
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
@@ -107,11 +103,11 @@ function Summary() {
         </div>
       </div>
 
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Link to="/newtrans">
           <button className="btn btn-primary">Add Another Transaction</button>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

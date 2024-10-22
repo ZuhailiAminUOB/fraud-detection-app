@@ -6,7 +6,7 @@ const ProposedSolution = () => {
             <h1 style={styles.title}>BUSINESS SOLUTION</h1>
             <div style={styles.boxContainer}>
                 <div style={styles.box}>
-                    <h3 style={styles.boxTitle}>Solution: Dynamic Fraud Scoring Implementation</h3>
+                    <h3 style={styles.boxTitle}><strong>Dynamic Fraud Scoring Implementation</strong></h3>
                     <p>Implement a system that adapts based on customer's transaction behaviors. For instance,
                         if the customer frequently travels for work or is known to make high-value purchases from
                         various locations, the alogrithm should reduce the weight of distance related features.
@@ -87,7 +87,6 @@ const styles = {
     image2: {
         maxWidth: '70%', // Ensures the image doesn't exceed the container's width
         height: '70%', // Keeps the aspect ratio intact
-
     },
 };
 

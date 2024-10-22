@@ -90,8 +90,8 @@ function NewTrans() {
             <option value="Bugis Junction">Bugis Junction</option>
             <option value="Marina Bay Sands">Marina Bay Sands</option>
             <option value="Ion Orchard">Ion Orchard</option>
-            <option value="China">China</option>
-            <option value="United States">United States</option>
+            <option value="Shanghai">Shanghai</option>
+            <option value="Las Vegas">Las Vegas</option>
           </select>
         </div>
 

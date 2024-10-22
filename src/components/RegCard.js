@@ -78,12 +78,11 @@ function RegCard() {
                 onChange={(event) => handleChange(index, event)}
                 required
               >
-                <option value="">Select your state</option>
-                <option value="New York">New York</option>
-                <option value="California">California</option>
-                <option value="Texas">Texas</option>
-                <option value="Florida">Florida</option>
-                <option value="Illinois">Illinois</option>
+                <option value="">Select your home location</option>
+                <option value="Temasek Polytechnic">Temaasek Polytechnic</option>
+                <option value="Singapore Polytechnic">Singapore Polytechnic</option>
+                <option value="Republic Polytechnic">Republic Polytechnic</option>
+                <option value="Nanyang Polytechnic">Nanyang Polytechnic</option>
                 <option value="Ngee Ann Polytechnic">Ngee Ann Polytechnic</option>
               </select>
             </div>
@@ -103,7 +102,7 @@ function RegCard() {
         <div className="mb-3">
           {/* <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}> */}
           <button type="button" className="btn btn-primary me-3" onClick={handleAddTransaction}>  
-            Add a New Transaction
+            Simulate Transactions
           </button>
           <button type="submit" className="btn btn-success">
             Submit
