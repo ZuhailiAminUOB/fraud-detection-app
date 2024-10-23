@@ -583,8 +583,23 @@ Three individuals were arrested for their suspected involvement in scam-related 
           </thead>
           
           <tbody>
-            <tr>
+                        <tr>
               <th scope="row">1</th>
+                <td>Inaccurate Fraud Detection (False Positives/Negatives)</td>
+                <td>High</td>
+                <td>High</td>
+                <td>High</td>
+                <td style={{textAlign: 'left'}}>
+                  <ul>
+                    <li>Use balanced datasets for training.</li>
+                    <li>Incorporate manual review options for flagged transactions.</li>
+                    <li>Implement confidence thresholds and feedback loops.</li>
+                  </ul>
+                </td>
+            </tr>
+
+            <tr>
+              <th scope="row">2</th>
                 <td>Regulatory Non-compliance</td>
                 <td>Medium</td>
                 <td>High</td>
@@ -598,22 +613,7 @@ Three individuals were arrested for their suspected involvement in scam-related 
                 </td>
             </tr>
 
-            <tr>
-              <th scope="row">2</th>
-                <td>Inaccurate Fraud Detection (False Positives/Negatives)</td>
-                <td>High</td>
-                <td>High</td>
-                <td>High</td>
-                <td style={{textAlign: 'left'}}>
-                  <ul>
-                    <li>Use balanced datasets for training.</li>
-                    <li>Incorporate manual review options for flagged transactions.</li>
-                    <li>Implement confidence thresholds and feedback loops.</li>
-                  </ul>
-                </td>
-                
-              
-            </tr>
+
 
             <tr>
               <th scope="row">3</th>
