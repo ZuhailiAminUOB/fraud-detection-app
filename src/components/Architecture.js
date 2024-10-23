@@ -3,7 +3,7 @@ import React from "react";
 const Architecture = () => {
     return (
         <div style={styles.container}>
-            <h1 style={styles.title}>ARCHITECTURE</h1>
+            <h1 style={styles.title}>DATABASE & ARCHITECTURE</h1>
             <div style={styles.boxContainer}>
                 <div style={styles.box}>
                     <h3 style={styles.boxTitle}>Database Schema</h3>
@@ -55,6 +55,7 @@ const styles = {
         justifyContent: 'space-between', // Evenly space out boxes
         width: '100%', // Full width for the boxes
         maxWidth: '1000px', // Optional: Max width for better spacing
+        height: "70%",
     },
     box: {
         flex: 1, // Each box takes equal space
@@ -90,11 +91,11 @@ const styles = {
     },
     image: {
         maxWidth: '100%', // Ensures the image doesn't exceed the container's width
-        height: '100%', // Keeps the aspect ratio intact
+        height: '70%', // Keeps the aspect ratio intact
     },
     image2: {
         maxWidth: '100%', // Ensures the image doesn't exceed the container's width
-        height: '100%', // Keeps the aspect ratio intact
+        height: '90%', // Keeps the aspect ratio intact
 
     },
 };

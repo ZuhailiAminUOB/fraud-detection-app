@@ -32,6 +32,8 @@ function Methodology() {
 
   return (
     <div className="container my-4">
+      <Architecture />
+      <br></br>
       <DatasetSummary />
       <br></br>
       <DatasetFeatures />
@@ -39,8 +41,6 @@ function Methodology() {
       <CorrelationAnalysis />
       <br></br>
       <DataProcessing />
-      <br></br>
-      <Architecture />
       <br></br>
       <MachineLearningModels />
       <br></br>
