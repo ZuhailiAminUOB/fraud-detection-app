@@ -21,19 +21,19 @@ const EvaluationMatrix = () => {
                     
                     <div style={styles.matrixGrid}>
                         <div style={styles.cell}>
-                            <p style={styles.greenText}>Legitimate transactions predicted as legitimate</p>
+                            <p style={styles.greenText}>Legitimate transactions predicted as legitimate (True Positive)</p>
                             <p style={styles.cellNumber}>182,509</p>
                         </div>
                         <div style={styles.cell}>
-                            <p style={styles.redText}>Legitimate transactions predicted as fraudulent</p>
+                            <p style={styles.redText}>Legitimate transactions predicted as fraudulent (False Positive)</p>
                             <p style={styles.cellNumber}>48</p>
                         </div>
                         <div style={styles.cell}>
-                            <p style={styles.redText}>Fraudulent transactions predicted as legitimate</p>
+                            <p style={styles.redText}>Fraudulent transactions predicted as legitimate (False Negative)</p>
                             <p style={styles.cellNumber}>1</p>
                         </div>
                         <div style={styles.cell}>
-                            <p style={styles.greenText}> Fraudulent transactions predicted as fraudulent</p>
+                            <p style={styles.greenText}> Fraudulent transactions predicted as fraudulent (True Negative)</p>
                             <p style={styles.cellNumber}>17,142</p>
                         </div>
                     </div>

@@ -20,7 +20,9 @@ label[for="username"] {
 label[for="password"] {
   color: black; /* Change only the username label color to black */
 }
-
+label[for="confirm_pwd"] {
+  color: black; /* Change only the username label color to black */
+}
 
 input {
   width: 100%; /* Full width inputs */

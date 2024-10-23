@@ -8,6 +8,8 @@ import MachineLearningModels from './MachineLearningModels';
 import EvaluationMatrix from './EvaluationMatrix';
 import Limitations from './Limitations';
 import ProposedSolution from './ProposedSolution';
+import ModelPerformance from './ModelPerformance';
+import Architecture from './Architecture';
 
 function Methodology() {
   const [buttonText, setButtonText] = useState("↑ Scroll Up");
@@ -38,7 +40,11 @@ function Methodology() {
       <br></br>
       <DataProcessing />
       <br></br>
+      <Architecture />
+      <br></br>
       <MachineLearningModels />
+      <br></br>
+      <ModelPerformance />
       <br></br>
       <EvaluationMatrix />
       <br></br>
