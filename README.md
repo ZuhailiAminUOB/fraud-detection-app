@@ -1,86 +1,129 @@
-# Getting Started with Create React App
+# 💳 Fraud Detection App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **Fraud Detection App** analyzes credit card transactions to determine whether they are fraudulent or legitimate, leveraging advanced AI methodologies to enhance banking security and reduce financial losses.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Table of Contents
 
-### `npm start`
+1. [About the Project](#about-the-project)
+2. [Key Features](#key-features)
+3. [Research Analysis](#research-analysis)
+4. [AI Methodology](#ai-methodology)
+5. [Risk Management](#risk-management)
+6. [Limitations](#limitations)
+7. [About Us](#about-us)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔍 About the Project
 
-### `npm test`
+### 🎯 Project Purpose
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project aims to design and implement a real-time fraud detection system that uses advanced AI techniques to identify and prevent fraudulent banking activities.
 
-### `npm run build`
+#### 🏆 Goals:
+- Enhance fraud detection by analyzing transaction patterns across regions.
+- Build a scalable, adaptive system that continuously learns and updates.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🚨 Problem Statement
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Traditional fraud detection systems struggle to adapt to evolving fraud tactics, resulting in financial risks for banks and customers. This project provides a dynamic and region-specific solution to mitigate these risks effectively.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ✨ Key Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The **Fraud Detection App** uses advanced features to classify transactions as "Fraud" or "No Fraud":
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 🏠 **Distance from Home:** Analyzes the distance between the customer's home and the transaction location.
+- 📍 **Distance from Last Transaction:** Compares the distance between the current and previous transactions.
+- 💸 **Ratio to Median Purchase Price:** Measures how the transaction amount deviates from the customer's median purchase value.
+- 🛍️ **Repeat Retailer:** Identifies whether the transaction occurred with a retailer previously used.
+- 💳 **Chip Utilization:** Checks if a chip-enabled card was used.
+- 🔐 **PIN Number Usage:** Indicates whether a PIN was used for the transaction.
+- 🌐 **Online Order:** Specifies if the transaction was an online purchase.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📚 Research Analysis
 
-## Learn More
+### 🤔 Why is AI Fraud Detection Important?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Fraudulent tactics are becoming more sophisticated, making traditional methods ineffective. AI enables real-time analysis of vast datasets, identifying complex patterns and unusual activities to prevent financial losses and protect customer trust.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 📈 Findings from Research
 
-### Code Splitting
+Our research highlights the vulnerabilities of traditional methods and the advantages of AI in adapting to evolving fraud patterns. Key case studies include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 💰 **Money Laundering Detection:** $195,000 blocked using data analytics at UOB.
+- 🔍 **Investment Scam Prevention:** $500,000 saved by identifying suspicious transfers.
+- 🌍 **International Scam Alerts:** $370,000 recovered via cross-border cooperation.
+- 🏢 **Corporate Fraud Activities:** Over $1.28 million seized from fake corporate accounts.
 
-### Analyzing the Bundle Size
+### 👥 Stakeholders' Impact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This system benefits banks, businesses, and customers by:
+- Reducing fraud-related financial losses.
+- Enhancing trust and customer satisfaction.
+- Ensuring compliance with regulatory standards.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧠 AI Methodology
 
-### Advanced Configuration
+### 📊 Dataset Overview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Legitimate Transactions:** 912,597  
+- **Fraudulent Transactions:** 87,403 (0.095%)
 
-### Deployment
+### 🔑 Key Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Data Normalization:** Applied Min-Max Scaler to normalize features.
+2. **Train-Test Split:** Partitioned dataset for model evaluation.
+3. **Correlation Analysis:** Identified key predictors such as "Distance from Home."
 
-### `npm run build` fails to minify
+### 🏅 Models Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Model                    | Accuracy | Precision | Recall | F1-Score |
+|--------------------------|----------|-----------|--------|----------|
+| Naive Bayes              | 89%      | 43%       | 96%    | 60%      |
+| Decision Tree (depth=4)  | 99%      | 94%       | 99%    | 96%      |
+| Random Forest (trees=5)  | 100%     | 100%      | 100%   | 100%     |
+| Logistic Regression      | 91%      | 50%       | 94%    | 65%      |
+| Neural Network (3 layers)| 99%      | 86%       | 100%   | 92%      |
 
-## Backend
+---
 
-Follow these steps to activate the backend as well.
-Split terminal
-1. cd reglog-backend
-2. Remove-Item -Recurse -Force node_modules
-3. npm install
-4. node index.js
+## ⚠️ Risk Management
 
-Split terminal again, cd to src/backend
-1. python -m venv venv
-2. venv\Scripts\activate
-3. python create_table.py (if u want to reset the database)
-4. pip install -r requirements.txt (only need to install once)
-5. python app.py
+### 🔎 Identified Risks:
+
+- **False Positives/Negatives:** Mitigate using balanced datasets and feedback loops.
+- **Regulatory Non-Compliance:** Conduct regular audits and monitor legal changes.
+- **Data Breaches:** Apply multi-layered security measures and penetration testing.
+
+---
+
+## 🚧 Limitations
+
+- **Dataset Imbalance:** Fraudulent transactions are rare, requiring careful sampling techniques.
+- **Dynamic Nature of Fraud:** Models may need frequent retraining to adapt to new tactics.
+- **Bias Concerns:** Potential geographical or behavioral biases in fraud detection.
+
+---
+
+## 🏦 About Us
+
+### 🌟 UOB Fraud Detection Web Application
+
+We are a group of five passionate individuals—**Zuhaili**, **Peh Shin**, **Si Hui**, **Kheng Liang**, and **Pravina**—participating in the **UOB Technology Development Programme 2024**. Our mission is to create an innovative **AI Fraud Detection Web Application** as part of our Capstone project.
+
+### 🎓 About the Programme
+
+The **UOB Technology Development Programme** is designed to cultivate emerging talent in technology within the banking sector. Participants gain essential skills through structured training, hands-on project experience, and mentorship from industry professionals.
+
+---
+
+💡 *As fresh graduates eager to make an impact in the tech industry, we are committed to delivering an impactful fraud detection solution that enhances banking security.*
+
